@@ -29,6 +29,26 @@ body {
     color : #000000;
 }
 
+.header .bouton{
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px;
+    margin-right: 50px;
+}
+
+.header .bouton button{
+    color: #FFFFFF;
+    background-color: #629AEE;
+    border: #629AEE;
+    border-radius: 100px;
+    padding: 15px;
+    text-align: center;
+}
+
+.header .bouton .bouton_connexion{
+    margin-right: 100px;
+}
+
 /* Menu vertical */
 
 .menu_vertical{
