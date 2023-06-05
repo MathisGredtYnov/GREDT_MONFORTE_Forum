@@ -9,7 +9,7 @@ import (
 func main() {
 	fmt.Println("server is running on port 8080 http://localhost:8080")
 	//gestion des css
-	http.Handle("/CSS/", http.StripPrefix("/CSS/", http.FileServer(http.Dir("CSS"))))
+	http.Handle("/CSS/", http.StripPrefix("/FRONTEND/CSS", http.FileServer(http.Dir("CSS"))))
 	//gestion des assets
 	http.Handle("/ASSETS/", http.StripPrefix("/ASSETS/", http.FileServer(http.Dir("ASSETS"))))
 	//gestion des images
