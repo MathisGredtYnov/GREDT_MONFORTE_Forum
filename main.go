@@ -14,6 +14,8 @@ func main() {
 	http.Handle("/ASSETS/", http.StripPrefix("/ASSETS/", http.FileServer(http.Dir("ASSETS"))))
 	//gestion des images
 	http.Handle("/ASSETS/image", http.StripPrefix("/ASSETS/IMG", http.FileServer(http.Dir("img"))))
+	//gestion des js
+	http.Handle("/JS/", http.StripPrefix("/JS/", http.FileServer(http.Dir("FRONTEND/JS"))))
 	//gestion des pages
 	http.HandleFunc("/", Index)
 	http.HandleFunc("/Private", Private)
