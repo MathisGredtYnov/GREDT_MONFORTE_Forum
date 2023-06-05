@@ -19,7 +19,6 @@ func main() {
 	http.HandleFunc("/Private", Private)
 	http.HandleFunc("/Compte", Compte)
 	http.HandleFunc("/CGU", CGU)
-	http.HandleFunc("/CGU2", CGU)
 	http.ListenAndServe(":8080", nil)
 }
 
@@ -56,15 +55,6 @@ func CGU(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	tmp := template.Must(template.ParseFiles("FRONTEND/template/CGU.html"))
-	tmp.Execute(w, nil)
-}
-
-func CGU2(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/CGU2" {
-		errorHandler(w, r, http.StatusNotFound)
-		return
-	}
-	tmp := template.Must(template.ParseFiles("FRONTEND/template/CGU2.html"))
 	tmp.Execute(w, nil)
 }
 
