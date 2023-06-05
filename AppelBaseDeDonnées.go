@@ -8,7 +8,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-func main() {
+func appelbasedonnée() {
 	db, err := sql.Open("mysql", "root:@tcp(localhost:3306)/projet_forum")
 	if err != nil {
 		log.Fatal(err)
