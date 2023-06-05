@@ -19,6 +19,7 @@ func main() {
 	http.HandleFunc("/Private", Private)
 	http.HandleFunc("/Compte", Compte)
 	http.HandleFunc("/CGU", CGU)
+	http.HandleFunc("/CGU2", CGU)
 	http.ListenAndServe(":8080", nil)
 }
 
