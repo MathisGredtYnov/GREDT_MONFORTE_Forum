@@ -5,7 +5,8 @@
 }
 
 body {
-    min-width: 100vw;
+    min-height: 100vh;
+    width: 100vw;
 }
 
 .background {
@@ -44,6 +45,31 @@ header h1 {
     padding-top: 30px;
 }
 
+.searchbar {
+    height: 100%;
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchbar input {
+    height: 50px;
+    width: 60%;
+    border-radius: 35px;
+    background-color: #629AEE;
+    border: none;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding-left: 20px;
+}
+.searchbar ::placeholder{
+    color: #F5D8D8;
+    font-size: 20px;
+    
+}
+
 .nav {
     height: 100%;
     width: 25%;
@@ -55,8 +81,10 @@ header h1 {
 .nav ul li {
     color: white;
     padding: 15px;
-    margin-right: 10px;
-    display: inline;
+    margin-right: 50px;
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
     border-radius: 35px;
     border: none;
     background-color: #629AEE;
@@ -71,5 +99,91 @@ header h1 {
     width: 100%;
     display: flex;
 }
+
+.WithOutHeader .Left{
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #342929;
+}
+
+.WithOutHeader .Right{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #342929;
+}
+
+/* Debut checkbox topic */
+
+.CheckBoxTopicMenu{
+    height: 20%;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin : 20px;
+    color: white;
+}
+
+.CheckBoxTopicMenu .NewTopic, .TopicFollow{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.CheckBoxTopicMenu input{
+    height: 20px;
+    width: 20px;
+    border-radius: 50px;
+    background-color: #629AEE;
+    border: none;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.CheckBoxTopicMenu label{
+    font-size: 20px;
+}
+
+/* Fin menu checkbox topic */
+
+/* Début topic content */
+
+.TopicContent{
+    min-height: 500px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin : 20px;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Fin topic content */
+
+/* Début information du compte */
+
+.InfoAccountContent{
+    min-height: 600px;
+    max-width: 90%;
+    display: flex;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Fin information du compte */
 
 /* Fin WithOutHeader */
