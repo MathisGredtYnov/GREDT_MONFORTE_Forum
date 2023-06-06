@@ -68,7 +68,7 @@ header h1 {
 
 .WithOutHeader {
     height: 100%;
-    width: 100%;
+    width: 90%;
     display: flex;
 }
 
