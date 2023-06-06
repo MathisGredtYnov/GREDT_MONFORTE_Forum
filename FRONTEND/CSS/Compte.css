@@ -24,7 +24,7 @@ header {
     width: 100%;
     background-color: #A47979;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .title {
