@@ -83,6 +83,7 @@
 /* Début information du compte */
 
 .InfoAccountContent{
+    margin-top: 20px;
     background-color: #ECD4D4;
     height: 525px;
     width: 500px;

@@ -3,6 +3,8 @@
 /* debut topic */
 
 .div-topic {
+    margin-top: 100px;
+    margin-left: 15%;
     height: 100%;
     width: 85%;
     display: flex;
