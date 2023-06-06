@@ -35,3 +35,32 @@ func AfficherCategories() []string {
 
 	return categories
 }
+
+func AfficherTopics() []string {
+	db, err := sql.Open("mysql", "root:@tcp(localhost:3306)/projet_forum")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer db.Close()
+
+	rows, err := db.Query("SELECT nom FROM topic")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer rows.Close()
+
+	var topics []string
+	for rows.Next() {
+		var nomTopic string
+		if err := rows.Scan(&nomTopic); err != nil {
+			log.Fatal(err)
+		}
+		topics = append(topics, nomTopic)
+	}
+
+	if err := rows.Err(); err != nil {
+		log.Fatal(err)
+	}
+
+	return topics
+}

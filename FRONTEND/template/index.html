@@ -26,13 +26,18 @@
             </div>
         </header>
         <div class="WithOutHeader">
-            
             <div class="div-categorie">
-                {{range .}}
+                {{range .Categories}}
                     <div class="categorie">{{.}}</div>
                 {{end}}
             </div>
-            
+            <div class = "div-topic">
+                {{range .Topics}}
+                    <div class = "topic">
+                        <div class = "topic-title">{{.}}</div>
+                    </div>
+                {{end}}
+            </div>
         </div>
     </div>
     <script src="/FRONTEND/JS/script.js"></script>

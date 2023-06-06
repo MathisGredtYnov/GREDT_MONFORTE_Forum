@@ -26,9 +26,15 @@ func Index(w http.ResponseWriter, r *http.Request) {
 		errorHandler(w, r, http.StatusNotFound)
 		return
 	}
-	categories := ForumPackage.AfficherCategories()
+	data := struct {
+		Categories []string
+		Topics     []string
+	}{
+		Categories: ForumPackage.AfficherCategories(),
+		Topics:     ForumPackage.AfficherTopics(),
+	}
 	tmp := template.Must(template.ParseFiles("FRONTEND/template/index.html"))
-	tmp.Execute(w, categories)
+	tmp.Execute(w, data)
 }
 
 func Private(w http.ResponseWriter, r *http.Request) {
