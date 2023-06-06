@@ -2,8 +2,11 @@ package main
 
 import (
 	"fmt"
+	"forum/ForumPackage"
 	"html/template"
 	"net/http"
+
+	_ "github.com/go-sql-driver/mysql"
 )
 
 func main() {
@@ -29,8 +32,9 @@ func Index(w http.ResponseWriter, r *http.Request) {
 		errorHandler(w, r, http.StatusNotFound)
 		return
 	}
+	categories := ForumPackage.AfficherCategories()
 	tmp := template.Must(template.ParseFiles("FRONTEND/template/index.html"))
-	tmp.Execute(w, nil)
+	tmp.Execute(w, categories)
 }
 
 func Private(w http.ResponseWriter, r *http.Request) {

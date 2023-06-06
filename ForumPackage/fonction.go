@@ -1,4 +1,4 @@
-package main
+package ForumPackage
 
 import (
 	"database/sql"
@@ -8,29 +8,31 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-func appelbasedonnée() {
+func AfficherCategories() string {
 	db, err := sql.Open("mysql", "root:@tcp(localhost:3306)/projet_forum")
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer db.Close()
 
-	rows, err := db.Query("SELECT ID_user, pseudonyme FROM utilisateur WHERE ID_user = 1")
+	rows, err := db.Query("SELECT nom FROM categorie")
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer rows.Close()
 
+	categories := ""
 	for rows.Next() {
-		var id int
-		var name string
-		if err := rows.Scan(&id, &name); err != nil {
+		var nomCategorie string
+		if err := rows.Scan(&nomCategorie); err != nil {
 			log.Fatal(err)
 		}
-		fmt.Println(id, name)
+		categories += fmt.Sprintf("%s", nomCategorie)
 	}
 
 	if err := rows.Err(); err != nil {
 		log.Fatal(err)
 	}
+
+	return categories
 }
