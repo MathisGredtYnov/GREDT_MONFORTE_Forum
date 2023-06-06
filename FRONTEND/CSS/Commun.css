@@ -212,7 +212,7 @@ header h1 {
 
 /*partie menu page*/
 
-.categorie {
+.categorieCP {
     position: relative;
     border-top: 2px solid #342929;
     width: 15%;
@@ -225,12 +225,12 @@ header h1 {
     text-align: center;
 }
 
-.categorie ul{
+.categorieCP ul{
     display: flex;
     flex-direction: column;
 }
 
-.categorie ul li {
+.categorieCP ul li {
     display: inline-flex;
     justify-content: center;
     align-items: center;
