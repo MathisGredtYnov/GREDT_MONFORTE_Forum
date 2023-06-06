@@ -89,14 +89,25 @@ header h1 {
     display: flex;
 }
 
-.categorie {
+.div-categorie {
     border-top: 2px solid #342929;
     height: 100%;
     width: 15%;
     background-color: #A47979;
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
 
+}
+
+.categorie {
+    font-size: 20px;
+    padding: 10px;
+    height:auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .popup {

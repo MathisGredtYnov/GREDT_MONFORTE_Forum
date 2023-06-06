@@ -2,13 +2,12 @@ package ForumPackage
 
 import (
 	"database/sql"
-	"fmt"
 	"log"
 
 	_ "github.com/go-sql-driver/mysql"
 )
 
-func AfficherCategories() string {
+func AfficherCategories() []string {
 	db, err := sql.Open("mysql", "root:@tcp(localhost:3306)/projet_forum")
 	if err != nil {
 		log.Fatal(err)
@@ -21,13 +20,13 @@ func AfficherCategories() string {
 	}
 	defer rows.Close()
 
-	categories := ""
+	var categories []string
 	for rows.Next() {
 		var nomCategorie string
 		if err := rows.Scan(&nomCategorie); err != nil {
 			log.Fatal(err)
 		}
-		categories += fmt.Sprintf("%s", nomCategorie)
+		categories = append(categories, nomCategorie)
 	}
 
 	if err := rows.Err(); err != nil {
