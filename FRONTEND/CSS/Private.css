@@ -75,7 +75,7 @@ header h1 {
     position: relative;
     border-top: 2px solid #342929;
     width: 15%;
-    min-height: calc(100vh - 100px); /* Hauteur de la fenêtre moins la hauteur du header */
+    min-height: calc(100vh - 100px); 
     background-color: #A47979;
     display: flex;
     flex-direction: column;
@@ -84,15 +84,21 @@ header h1 {
     text-align: center;
 }
 
-.categorie ul {
-    list-style: none; /* Supprime les puces de la liste */
-    padding: 0; /* Supprime le remplissage par défaut de la liste */
+.categorie ul{
+    display: flex;
+    flex-direction: column;
 }
 
 .categorie ul li {
-    list-style: none; /* Supprime les puces des éléments de la liste */
-    margin: 0; /* Supprime les marges par défaut des éléments de la liste */
-    padding: 0; /* Supprime le remplissage par défaut des éléments de la liste */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 35px;
+    border: none;
+    background-color: #629AEE;
 }
 
 /* Fin navbar */
