@@ -1,29 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    height: 100vh;
-    width: 100vw;
-}
-
-.background {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: #342929;
-}
-
 /* Debut WithOutHeader */
-
-.WithOutHeader {
-    height: 100%;
-    width: 100%;
-    display: flex;
-}
 
 .WithOutHeader .Left{
     height: 100%;
