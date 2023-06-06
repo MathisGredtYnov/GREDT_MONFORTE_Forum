@@ -23,7 +23,7 @@
 /* Debut menu topic */
 
 .TopicMenu{
-    background-color: #ECD4D4;
+    background-color: #A47979;
     height: 80px;
     width: 900px;
     display: flex;
@@ -65,7 +65,7 @@
 /* Début topic content */
 
 .TopicContent{
-    background-color: #ECD4D4;
+    background-color: #A47979;
     height: 400px;
     width: 900px;
     display: flex;
@@ -84,7 +84,7 @@
 
 .InfoAccountContent{
     margin-top: 20px;
-    background-color: #ECD4D4;
+    background-color: #A47979;
     height: 525px;
     width: 500px;
     display: flex;
