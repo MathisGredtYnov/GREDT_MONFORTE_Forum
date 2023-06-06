@@ -32,7 +32,11 @@ header {
     width: 20%;
     display: flex;
     justify-content: flex-start;
+}
 
+.title img{
+    display: flex;
+    justify-content: flex-start;
 }
 
 header h1 {
