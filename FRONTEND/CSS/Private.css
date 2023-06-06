@@ -23,7 +23,7 @@ header {
     width: 100%;
     background-color: #A47979;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .title {
@@ -31,7 +31,11 @@ header {
     width: 20%;
     display: flex;
     justify-content: flex-start;
+}
 
+.title img{
+    display: flex;
+    justify-content: flex-start;
 }
 
 header h1 {

@@ -1,99 +1,102 @@
 * {
-    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
+    min-width: 100vw;
+}
+
+.background {
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background-color: #342929;
 
 }
 
 /* Header */
 
-.header {
+header {
+    height: 100px;
+    width: 100%;
+    background-color: #A47979;
     display: flex;
     justify-content: space-between;
-    background-color: #A47979;
-    height: 75px;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 2;
 }
 
-.header #titre h1{
-    color : #000000;
-}
-
-.header .bouton{
-    display: flex;
-    justify-content: flex-end;
-    margin: 20px;
-    margin-right: 50px;
-}
-
-.header .bouton button{
-    color: #FFFFFF;
-    background-color: #629AEE;
-    border: #629AEE;
-    border-radius: 100px;
-    padding: 15px;
-    text-align: center;
-}
-
-.header .bouton .bouton_connexion{
-    margin-right: 100px;
-}
-
-/* Menu vertical */
-
-.menu_vertical{
-    display: flex;
-    justify-content: center;
-    background-color: #A47979;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 2;
-}
-
-.menu_vertical ul {
-    top: 75px;
-    left: 0;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color: #A47979;
-    position: fixed;
-    width: 15%;
+.title {
     height: 100%;
-    overflow: auto;
+    width: 20%;
+    display: flex;
+    justify-content: flex-start;
 }
 
-.menu_vertical li {
+.title img{
+    display: flex;
+    justify-content: flex-start;
+}
+
+header h1 {
+    color: black;
+    padding-top: 30px;
+}
+
+.nav {
+    height: 100%;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav ul li {
+    color: white;
+    padding: 15px;
+    margin-right: 10px;
+    display: inline;
+    border-radius: 35px;
+    border: none;
+    background-color: #629AEE;
+}
+
+/* Fin header */
+
+/* Debut navbar */
+
+.WithOutHeader {
+    height: 100%;
+    width: 90%;
+    display: flex;
+}
+
+.categorie {
+    position: relative;
+    border-top: 2px solid #342929;
+    width: 15%;
+    min-height: calc(100vh - 100px); /* Hauteur de la fenÃªtre moins la hauteur du header */
+    background-color: #A47979;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     text-align: center;
 }
 
-.menu_vertical li a {
-    display: block;
-    text-decoration: none;
-    padding: 12px 4px;
-    color: #000;
+.categorie ul {
+    list-style: none; /* Supprime les puces de la liste */
+    padding: 0; /* Supprime le remplissage par dÃ©faut de la liste */
 }
 
-.menu_vertical li a.active {
-    color: #fff;
+.categorie ul li {
+    list-style: none; /* Supprime les puces des Ã©lÃ©ments de la liste */
+    margin: 0; /* Supprime les marges par dÃ©faut des Ã©lÃ©ments de la liste */
+    padding: 0; /* Supprime le remplissage par dÃ©faut des Ã©lÃ©ments de la liste */
 }
 
-.menu_vertical li a:hover:not(.active) {
-    color: #fff;
-}
-    
-/* Fin menu vertical */
+/* Fin navbar */
 
 /* Contenu */
 
