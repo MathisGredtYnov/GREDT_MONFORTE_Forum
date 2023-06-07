@@ -118,12 +118,6 @@ header h1 {
     font-family: 'inter';
 }
 
-.bouton .bouton-active{
-    background-color: #342929;
-    color: #629AEE;
-    font-family: 'inter';
-}
-
 /* Fin animation bouton */
 
 /* Debut popup */
@@ -306,8 +300,6 @@ header h1 {
 
 /* Fin navbar verticale */
 
-/* Fin WithoutHeader */
-
 /* Contenu */
 
 .content{
@@ -344,3 +336,4 @@ header h1 {
 
 /* Fin contenu */
 
+/* Fin WithoutHeader */
