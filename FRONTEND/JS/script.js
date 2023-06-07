@@ -1,37 +1,49 @@
-
-
 //POPUP DE CONNEXION
 
 var connexion = false;
 var connecter = false;
 
-const popup = document.querySelector('.popup');
+const popupconnexion = document.querySelector('.popupconnexion');
 const loginButton = document.getElementById('login');
-console.log(popup)
+
+console.log(popupconnexion)
+
 loginButton.addEventListener('click', function() {
-    const closeButton = popup.querySelector('.close-button');
+    const closeButton = popupconnexion.querySelector('.close-button');
     closeButton.addEventListener('click', function() {
-        popup.style.display = 'none';
+        popupconnexion.style.display = 'none';
     });
 
     if ((connecter === false) & (connexion === false)) {
-        popup.style.display = 'flex';
+        popupconnexion.style.display = 'flex';
         connecter = true;
     } else {
-        popup.style.display = 'none';
+        popupconnexion.style.display = 'none';
         connecter = false;
     }
-
-    // if (loginButton.textContent === 'Se connecter') {
-    //     popup.style.display = 'flex';
-    // } else {
-    //     popup.style.display = 'none';
-    // }
-
 });
 
 
 //POPUP D'INSCRIPTION
+
+const BoutonInscription = document.getElementById('BoutonInscription');
+const popupinscription = document.querySelector('.popupinscription');
+
+console.log(popupinscription)
+
+BoutonInscription.addEventListener('click', function() {
+    const closeButton = popupinscription.querySelector('.close-button');
+    closeButton.addEventListener('click', function() {
+        popupinscription.style.display = 'none';
+    });
+
+    if ((connecter === false) & (connexion === false) & (inscription === false)) {
+        popupconnexion.style.display = 'none';
+        popupinscription.style.display = 'flex';
+    } else {
+        popupinscription.style.display = 'none';
+    }
+});
 
 // Connexion
 
@@ -53,3 +65,17 @@ function Connexion() {
 }
 
 // Fin Connexion
+
+// Inscription
+
+const BoutonInscriptionpopup = document.querySelector('.BoutonInscriptionpopup');
+
+function Inscription() {
+    // var Inscriptionpopup = document.getElementById('BoutonInscriptionpopup');
+    BoutonInscriptionpopup.addEventListener('click', function() {
+        popup.style.display = 'none';
+        bouton.textContent = 'Se déconnecter';
+        connexion = false;
+        connecter = true;
+    });
+}
