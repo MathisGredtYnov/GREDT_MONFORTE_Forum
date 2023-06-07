@@ -27,13 +27,11 @@ func Index(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	data := struct {
-		Categories   []string
-		Topics       []string
-		FirstMessage []string
+		Categories []string
+		Topics     []ForumPackage.Topic
 	}{
-		Categories:   ForumPackage.AfficherCategories(),
-		Topics:       ForumPackage.AfficherTopics(),
-		FirstMessage: ForumPackage.AfficherFirstMessage(),
+		Categories: ForumPackage.AfficherCategories(),
+		Topics:     ForumPackage.AfficherTopics(),
 	}
 	tmp := template.Must(template.ParseFiles("FRONTEND/template/index.html"))
 	tmp.Execute(w, data)

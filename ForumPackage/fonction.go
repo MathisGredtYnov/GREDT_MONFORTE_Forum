@@ -7,6 +7,11 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
+type Topic struct {
+	Nom     string
+	Contenu string
+}
+
 func AfficherCategories() []string {
 	db, err := sql.Open("mysql", "root:@tcp(localhost:3306)/projet_forum")
 	if err != nil {
@@ -36,26 +41,26 @@ func AfficherCategories() []string {
 	return categories
 }
 
-func AfficherTopics() []string {
+func AfficherTopics() []Topic {
 	db, err := sql.Open("mysql", "root:@tcp(localhost:3306)/projet_forum")
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer db.Close()
 
-	rows, err := db.Query("SELECT nom FROM topic")
+	rows, err := db.Query("SELECT nom, contenu FROM topic, message WHERE topic.ID_topic = message.ID_topic GROUP BY topic.ID_topic ORDER BY topic.ID_topic ASC")
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer rows.Close()
 
-	var topics []string
+	var topics []Topic
 	for rows.Next() {
-		var nomTopic string
-		if err := rows.Scan(&nomTopic); err != nil {
+		var topic Topic
+		if err := rows.Scan(&topic.Nom, &topic.Contenu); err != nil {
 			log.Fatal(err)
 		}
-		topics = append(topics, nomTopic)
+		topics = append(topics, topic)
 	}
 
 	if err := rows.Err(); err != nil {
@@ -63,33 +68,4 @@ func AfficherTopics() []string {
 	}
 
 	return topics
-}
-
-func AfficherFirstMessage() []string {
-	db, err := sql.Open("mysql", "root:@tcp(localhost:3306)/projet_forum")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer db.Close()
-
-	rows, err := db.Query("SELECT contenu FROM message WHERE id_message = 1")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer rows.Close()
-
-	var messages []string
-	for rows.Next() {
-		var message string
-		if err := rows.Scan(&message); err != nil {
-			log.Fatal(err)
-		}
-		messages = append(messages, message)
-	}
-
-	if err := rows.Err(); err != nil {
-		log.Fatal(err)
-	}
-
-	return messages
 }

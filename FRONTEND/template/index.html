@@ -31,10 +31,11 @@
                     <div class="categorie">{{.}}</div>
                 {{end}}
             </div>
-            <div class = "div-topic">
-                {{range .Topics}}
-                    <div class = "topic">
-                        <div class = "topic-title">{{.}}</div>
+            <div class="div-topic">
+                {{range $index, $topic := .Topics}}
+                    <div class="topic">
+                        <div class="topic-title">{{$topic.Nom}}</div>
+                        <div class="topic-content">{{$topic.Contenu}}</div>
                     </div>
                 {{end}}
             </div>
