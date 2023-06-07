@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'inter';
+    src: url('/FRONTEND/ASSETS/FONT/inter/Inter-VariableFont_slnt,wght.ttf');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +12,7 @@
 body {
     min-width: 100vw;
     background-color: #342929;
+    font-family: 'inter';
 }
 
 .background {
@@ -95,18 +101,27 @@ header h1 {
     background-color: #629AEE;
 }
 
-.bouton {
-    cursor: pointer;
-}
-
 /* Fin header */
 
 /* Début animation bouton */
 
+.bouton {
+    cursor: pointer;
+    background-color: transparent;
+    color: black;
+    transition: 0.5s;
+}
+
 .bouton:hover {
     background-color: #F5D8D8;
     color: #629AEE;
-    transition: 0.5s;
+    font-family: 'inter';
+}
+
+.bouton .bouton-active{
+    background-color: #342929;
+    color: #629AEE;
+    font-family: 'inter';
 }
 
 /* Fin animation bouton */

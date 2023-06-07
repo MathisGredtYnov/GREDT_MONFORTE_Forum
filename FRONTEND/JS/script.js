@@ -33,7 +33,12 @@ loginButton.addEventListener('click', function() {
         document.body.removeChild(popup);
     });
 
-    document.body.appendChild(popup);
+    if (loginButton.textContent === 'Se déconnecter') {
+        document.body.appendChild(popup);
+    } else {
+        document.body.removeChild(popup);
+    }
+        
 });
 
 
@@ -41,25 +46,16 @@ loginButton.addEventListener('click', function() {
 
 
 
-// Activation Bouton
+// Changer texte bouton login
 
-document.addEventListener('DOMContentLoaded', function() {
-    var boutons = document.getElementsByClassName('myButton');
-    for (var i = 0; i < boutons.length; i++) {
-        boutons[i].addEventListener('click', function() {
-        ActiveButton(this);
-      });
-    }
-});
-
-function toggleButton(button) {
-    if (button.classList.contains('active')) {
-        button.classList.remove('active');
-        button.style.backgroundColor = ''; // Réinitialise la couleur de fond à sa valeur par défaut
+function changerTexte() {
+    var bouton = document.getElementById('login');
+    
+    if (bouton.textContent === 'Se connecter') {
+      bouton.textContent = 'Se déconnecter';
     } else {
-        button.classList.add('active');
-        button.style.backgroundColor = 'red'; // Remplacez 'red' par la couleur souhaitée lorsque le bouton est activé
+      bouton.textContent = 'Se connecter';
     }
-}
+  }
 
-// Fin Activation Bouton
+// Fin changer texte bouton login
