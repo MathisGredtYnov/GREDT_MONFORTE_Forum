@@ -103,7 +103,7 @@ header h1 {
 
 /* Début animation bouton */
 
-.nav ul li:hover, .categorieCP ul li:hover {
+.bouton:hover {
     background-color: #F5D8D8;
     color: #629AEE;
     transition: 0.5s;
