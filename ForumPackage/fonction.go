@@ -64,3 +64,32 @@ func AfficherTopics() []string {
 
 	return topics
 }
+
+func AfficherFirstMessage() []string {
+	db, err := sql.Open("mysql", "root:@tcp(localhost:3306)/projet_forum")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer db.Close()
+
+	rows, err := db.Query("SELECT contenu FROM message WHERE id_message = 1")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer rows.Close()
+
+	var messages []string
+	for rows.Next() {
+		var message string
+		if err := rows.Scan(&message); err != nil {
+			log.Fatal(err)
+		}
+		messages = append(messages, message)
+	}
+
+	if err := rows.Err(); err != nil {
+		log.Fatal(err)
+	}
+
+	return messages
+}

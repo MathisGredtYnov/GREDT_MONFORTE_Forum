@@ -12,10 +12,13 @@ loginButton.addEventListener('click', function() {
             <span class="close-button">&times;</span>
         </div>
         <div class="main-div">
-            <h1 class="log">Se connecter</h1>
+            <h1 class="title_popup">Se connecter</h1>
             <div class="input-div">
                 <input type="email" class="email" placeholder="E-mail">
                 <input type="password" class="password" placeholder="Mot de passe">
+            </div>
+            <div class = "log">
+                <button class="login">Se connecter</button>
             </div>
             <div class="conditions">
                 <p>En vous connectant, vous acceptez les <a href="/CGU">Conditions d'utilisation</a> et la <a href="/Private">Politique de confidentialité</a> de BlueDit.</p>
