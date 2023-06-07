@@ -41,3 +41,25 @@ loginButton.addEventListener('click', function() {
 
 
 
+// Activation Bouton
+
+document.addEventListener('DOMContentLoaded', function() {
+    var boutons = document.getElementsByClassName('myButton');
+    for (var i = 0; i < boutons.length; i++) {
+        boutons[i].addEventListener('click', function() {
+        ActiveButton(this);
+      });
+    }
+});
+
+function toggleButton(button) {
+    if (button.classList.contains('active')) {
+        button.classList.remove('active');
+        button.style.backgroundColor = ''; // Réinitialise la couleur de fond à sa valeur par défaut
+    } else {
+        button.classList.add('active');
+        button.style.backgroundColor = 'red'; // Remplacez 'red' par la couleur souhaitée lorsque le bouton est activé
+    }
+}
+
+// Fin Activation Bouton

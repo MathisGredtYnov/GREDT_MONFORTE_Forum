@@ -48,6 +48,12 @@
     background-color: #629AEE;
 }
 
+.TopicMenu ul li:hover {
+    background-color: #F5D8D8;
+    color: #629AEE;
+    transition: 0.5s;
+}
+
 .TopicMenu input{
     height: 20px;
     width: 20px;
