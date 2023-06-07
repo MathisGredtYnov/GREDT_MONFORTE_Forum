@@ -18,7 +18,7 @@ loginButton.addEventListener('click', function() {
                 <input type="password" class="password" placeholder="Mot de passe">
             </div>
             <div class = "log">
-                <button class="login">Se connecter</button>
+                <button class="login" onclick="Connexion()">Se connecter</button>
             </div>
             <div class="conditions">
                 <p>En vous connectant, vous acceptez les <a href="/CGU">Conditions d'utilisation</a> et la <a href="/Private">Politique de confidentialité</a> de BlueDit.</p>
@@ -59,6 +59,6 @@ function changerTexte() {
     } else {
       bouton.textContent = 'Se connecter';
     }
-  }
+}
 
 // Fin changer texte bouton login

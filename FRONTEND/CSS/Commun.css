@@ -11,8 +11,9 @@
 
 body {
     min-width: 100vw;
-    background-color: #342929;
+    background-color: #272727;
     font-family: 'inter';
+    color: white;
 }
 
 .background {
@@ -28,7 +29,7 @@ header {
     position: fixed;
     height: 100px;
     width: 100%;
-    background-color: #A47979;
+    background-color: #222222;
     display: flex;
     justify-content: space-between;
     z-index: 2;
@@ -258,10 +259,10 @@ header h1 {
 
 .div-categorie {
     position: fixed;
-    border-top: 2px solid #342929;
+    border-top: 2px solid #272727;
     height: 100vh;
     width: 15%;
-    background-color: #A47979;
+    background-color: #222222;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -283,10 +284,10 @@ header h1 {
 
 .categorieCP {
     position: relative;
-    border-top: 2px solid #342929;
+    border-top: 2px solid #272727;
     width: 15%;
     min-height: calc(100vh - 100px); 
-    background-color: #A47979;
+    background-color: #222222;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
