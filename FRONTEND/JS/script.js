@@ -2,65 +2,54 @@
 
 //POPUP DE CONNEXION
 
+var connexion = false;
+var connecter = false;
+
+const popup = document.querySelector('.popup');
 const loginButton = document.getElementById('login');
+console.log(popup)
 loginButton.addEventListener('click', function() {
-    // Créez une fenêtre contextuelle (pop-up)
-    const popup = document.createElement('div');
-    popup.className = 'popup';
-
-    // Contenu de la fenêtre contextuelle
-    popup.innerHTML = `
-        <div class="popup-header">
-            <span class="close-button">&times;</span>
-        </div>
-        <div class="main-div">
-            <h1 class="title_popup">Se connecter</h1>
-            <div class="input-div">
-                <input type="email" class="email" placeholder="E-mail">
-                <input type="password" class="password" placeholder="Mot de passe">
-            </div>
-            <div class = "log">
-                <button class="login" onclick="Connexion()">Se connecter</button>
-            </div>
-            <div class="conditions">
-                <p>En vous connectant, vous acceptez les <a href="/CGU">Conditions d'utilisation</a> et la <a href="/Private">Politique de confidentialité</a> de BlueDit.</p>
-            </div>
-            <div class="inscription">
-                <h1>Première fois sur BlueDit ?</h1>
-                <p>S'inscrire</p>
-            </div>
-        </div>
-    `;
-
-    // Ajoutez un événement de clic à la croix pour fermer la fenêtre
     const closeButton = popup.querySelector('.close-button');
     closeButton.addEventListener('click', function() {
-        document.body.removeChild(popup);
+        popup.style.display = 'none';
     });
 
-    if (loginButton.textContent === 'Se déconnecter') {
-        document.body.appendChild(popup);
+    if ((connecter === false) & (connexion === false)) {
+        popup.style.display = 'flex';
+        connecter = true;
     } else {
-        document.body.removeChild(popup);
+        popup.style.display = 'none';
+        connecter = false;
     }
-        
+
+    // if (loginButton.textContent === 'Se connecter') {
+    //     popup.style.display = 'flex';
+    // } else {
+    //     popup.style.display = 'none';
+    // }
+
 });
 
 
 //POPUP D'INSCRIPTION
 
+// Connexion
 
-
-// Changer texte bouton login
-
-function changerTexte() {
+function Connexion() {
     var bouton = document.getElementById('login');
     
-    if (bouton.textContent === 'Se connecter') {
-      bouton.textContent = 'Se déconnecter';
-    } else {
+    if (bouton.textContent === 'Se déconnecter') {
       bouton.textContent = 'Se connecter';
+      connexion = true;
+      connecter = false;
     }
+    var connexionpopup = document.getElementById('BoutonConnexionPopup');
+    connexionpopup.addEventListener('click', function() {
+        popup.style.display = 'none';
+        bouton.textContent = 'Se déconnecter';
+        connexion = false;
+        connecter = true;
+    });
 }
 
-// Fin changer texte bouton login
+// Fin Connexion
