@@ -14,7 +14,6 @@ body {
     background-color: #272727;
     font-family: 'inter';
     color: white;
-    overflow-x: hidden;
 }
 
 .background {
@@ -121,7 +120,7 @@ header h1 {
 
 /* Debut popup */
 
-.popupconnexion, .popupinscription {
+.popup {
     height: 600px;
     width: 500px;
     position: fixed;
@@ -136,7 +135,6 @@ header h1 {
     flex-direction: column;
     align-items: center;
     z-index: 3;
-    display: none;
 }
 
 .popup-header {
@@ -179,7 +177,7 @@ header h1 {
     margin-top: 10px;
 }
 
-.email, .password, .username{
+.email, .password{
     height: 50px;
     width: 80%;
     border-radius: 35px;

@@ -1,81 +1,66 @@
+
+
 //POPUP DE CONNEXION
 
-var connexion = false;
-var connecter = false;
-
-const popupconnexion = document.querySelector('.popupconnexion');
 const loginButton = document.getElementById('login');
-
-console.log(popupconnexion)
-
 loginButton.addEventListener('click', function() {
-    const closeButton = popupconnexion.querySelector('.close-button');
+    // Créez une fenêtre contextuelle (pop-up)
+    const popup = document.createElement('div');
+    popup.className = 'popup';
+
+    // Contenu de la fenêtre contextuelle
+    popup.innerHTML = `
+        <div class="popup-header">
+            <span class="close-button">&times;</span>
+        </div>
+        <div class="main-div">
+            <h1 class="title_popup">Se connecter</h1>
+            <div class="input-div">
+                <input type="email" class="email" placeholder="E-mail">
+                <input type="password" class="password" placeholder="Mot de passe">
+            </div>
+            <div class = "log">
+                <button class="login" onclick="Connexion()">Se connecter</button>
+            </div>
+            <div class="conditions">
+                <p>En vous connectant, vous acceptez les <a href="/CGU">Conditions d'utilisation</a> et la <a href="/Private">Politique de confidentialité</a> de BlueDit.</p>
+            </div>
+            <div class="inscription">
+                <h1>Première fois sur BlueDit ?</h1>
+                <p>S'inscrire</p>
+            </div>
+        </div>
+    `;
+
+    // Ajoutez un événement de clic à la croix pour fermer la fenêtre
+    const closeButton = popup.querySelector('.close-button');
     closeButton.addEventListener('click', function() {
-        popupconnexion.style.display = 'none';
+        document.body.removeChild(popup);
     });
 
-    if ((connecter === false) & (connexion === false)) {
-        popupconnexion.style.display = 'flex';
-        connecter = true;
+    if (loginButton.textContent === 'Se déconnecter') {
+        document.body.appendChild(popup);
     } else {
-        popupconnexion.style.display = 'none';
-        connecter = false;
+        document.body.removeChild(popup);
     }
+        
 });
 
 
 //POPUP D'INSCRIPTION
 
-const BoutonInscription = document.getElementById('BoutonInscription');
-const popupinscription = document.querySelector('.popupinscription');
 
-console.log(popupinscription)
 
-BoutonInscription.addEventListener('click', function() {
-    const closeButton = popupinscription.querySelector('.close-button');
-    closeButton.addEventListener('click', function() {
-        popupinscription.style.display = 'none';
-    });
+// Changer texte bouton login
 
-    if ((connecter === false) & (connexion === false) & (inscription === false)) {
-        popupconnexion.style.display = 'none';
-        popupinscription.style.display = 'flex';
-    } else {
-        popupinscription.style.display = 'none';
-    }
-});
-
-// Connexion
-
-function Connexion() {
+function changerTexte() {
     var bouton = document.getElementById('login');
     
-    if (bouton.textContent === 'Se déconnecter') {
+    if (bouton.textContent === 'Se connecter') {
+      bouton.textContent = 'Se déconnecter';
+    } else {
       bouton.textContent = 'Se connecter';
-      connexion = true;
-      connecter = false;
     }
-    var connexionpopup = document.getElementById('BoutonConnexionPopup');
-    connexionpopup.addEventListener('click', function() {
-        popup.style.display = 'none';
-        bouton.textContent = 'Se déconnecter';
-        connexion = false;
-        connecter = true;
-    });
 }
 
-// Fin Connexion
-
-// Inscription
-
-const BoutonInscriptionpopup = document.querySelector('.BoutonInscriptionpopup');
-
-function Inscription() {
-    // var Inscriptionpopup = document.getElementById('BoutonInscriptionpopup');
-    BoutonInscriptionpopup.addEventListener('click', function() {
-        popup.style.display = 'none';
-        bouton.textContent = 'Se déconnecter';
-        connexion = false;
-        connecter = true;
-    });
-}
+// Fin changer texte bouton login

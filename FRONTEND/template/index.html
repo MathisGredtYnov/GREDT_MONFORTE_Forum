@@ -24,7 +24,6 @@
                     <li class="bouton" >Mon compte</li>
                 </ul>
             </div>
-            
         </header>
         <div class="WithOutHeader">
             <div class="div-categorie">
@@ -35,7 +34,7 @@
             <div class="div-topic">
                 {{range $index, $topic := .Topics}}
                     <div class="topic">
-                        <div class="topic-title">{{$topic.Nom}}</div>
+                        <div class="topic-title">{{$topic.Nom}} poster par: {{$topic.Pseudonyme}} le {{$topic.Created_date}}</div>
                         <div class="topic-content">{{$topic.Contenu}}</div>
                     </div>
                 {{end}}
