@@ -11,9 +11,10 @@
 
 body {
     min-width: 100vw;
-    background-color: #272727;
+    background-color: #3b3a3a;
     font-family: 'inter';
     color: white;
+    overflow-x: hidden;
 }
 
 .background {
@@ -273,8 +274,31 @@ header h1 {
     height: auto;
     width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.categorie img {
+    height: 45px;
+    width: 45px;
+}
+
+.dropdown-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.dropdown-content {
+    display: none;
+
+}
+
+.dropdown-content.show {
+    display: flex;
+    
 }
 
 /*partie menu page*/

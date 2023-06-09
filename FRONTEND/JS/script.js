@@ -64,3 +64,8 @@ function changerTexte() {
 }
 
 // Fin changer texte bouton login
+
+function toggleDropdown(element) {
+    var dropdownContent = element.nextElementSibling;
+    dropdownContent.classList.toggle('show');
+}

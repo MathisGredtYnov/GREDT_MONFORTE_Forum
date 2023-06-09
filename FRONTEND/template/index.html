@@ -28,14 +28,25 @@
         <div class="WithOutHeader">
             <div class="div-categorie">
                 {{range .Categories}}
-                    <div class="categorie">{{.}}</div>
+                    <div class="categorie">
+                        <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                            {{.}} <img src="/FRONTEND/ASSETS/IMG/arrow.png" alt="arrow"></img>
+                        </div>
+                        <div class="dropdown-content">
+                            <p>COUCOU</p>
+                        </div>
+                    </div>
                 {{end}}
             </div>
             <div class="div-topic">
                 {{range $index, $topic := .Topics}}
                     <div class="topic">
-                        <div class="topic-title">{{$topic.Nom}} poster par: {{$topic.Pseudonyme}} le {{$topic.Created_date}}</div>
+                        <div class="topic-title">{{$topic.Nom}} poster par {{$topic.Pseudonyme}} le {{$topic.Created_date}}</div>
                         <div class="topic-content">{{$topic.Contenu}}</div>
+                        <div class="div-option">
+                            <button class="comments bouton">Commentaire</button>
+                            <button class="report bouton">Signaler</button>
+                        </div>
                     </div>
                 {{end}}
             </div>
