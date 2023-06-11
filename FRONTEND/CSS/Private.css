@@ -29,7 +29,6 @@ body {
 
 .content {
     height: 100%;
-    width: 85%;
     background-color: #342929;
     display: flex;
     flex-direction: column;

@@ -19,7 +19,41 @@
 
 .topic {
     height: 200px;
-    width: 700px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    background-color: #222222;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.comments, .report {
+    border-radius: 15px;
+    border: none;
+    background-color: #629AEE;
+    color: white;
+    padding: 15px;
+}
+
+#topic-details {
+    /* Styles pour la section détaillée du sujet */
+    display: none;
+    color: white;
+    margin-left: 15%;
+    height: 20%;
+    width: 85%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.topic-selected {
+    min-height: 200px;
+    height: auto;
+    width: 60%;
     display: flex;
     flex-direction: column;
     background-color: #222222;
@@ -30,25 +64,72 @@
 }
 
 .topic-content {
-    padding-top: 20px;
-    padding-left: 20px;
     display: flex;
     align-items: center;
-    font-size: 20px;
-    height: 50%;
+    font-size: 15px;
 }
 
+.div-add-comment {
+    background-color: #222222;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.add-comment {
+    width: 80%;
+    height: 80%;
+    flex-grow: 0.7;
+    padding: 10px;
+    border: 1px solid #d7dadc;
+    background-color: #222222;
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: none;
+}
+
+.add {
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #0079d3;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.add:hover {
+    background-color: #005da9;
+  }
+  
+.add:focus {
+    outline: none;
+}
+
+
+.div-comment {
+    background-color: #222222;
+    min-height: 250px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 .div-option {
-    height: 50%;
+    height: 100%;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
 }
 
-.comments, .report {
-    border-radius: 35px;
-    border: none;
-    background-color: #629AEE;
-    color: white;
-    padding: 15px;
-}
+

@@ -68,3 +68,16 @@ function toggleDropdown(element) {
     var dropdownContent = element.nextElementSibling;
     dropdownContent.classList.toggle('active');
 }
+
+function showTopic(topicIndex) {
+    var divTopicElement = document.querySelector(".div-topic");
+    var topicDetailsElement = document.getElementById("topic-details");
+    var topicContentElements = document.querySelectorAll(".topic-content");
+
+    divTopicElement.style.display = "none";
+    topicDetailsElement.style.display = "flex";
+    var topicContent = topicContentElements[topicIndex].innerText;
+    
+    var topicContentElement = topicDetailsElement.querySelector(".topic-content");
+    topicContentElement.innerText = topicContent;
+}

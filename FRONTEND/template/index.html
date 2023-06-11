@@ -11,17 +11,17 @@
 <body>
     <div class = "background">
         <header>
-            <div class = "title">
-                <img src = "/FRONTEND/ASSETS/IMG/Logo.png" alt = "Logo" class = "Logo">
-                <h1>BlueDit</h1>
+            <div class="title">
+                <a href="/"><img src="/FRONTEND/ASSETS/IMG/Logo.png" alt="Logo" class="Logo"></a>
+                <h1><a href="/">BlueDit</a></h1>
             </div>
-            <div class = "searchbar">
-                <input type = "text" placeholder = "Rechercher sur BlueDit">
+            <div class="searchbar">
+                <input type="text" placeholder="Rechercher sur BlueDit">
             </div>
-            <div class = "nav">
+            <div class="nav">
                 <ul>
                     <li class="bouton" id="login" onclick="changerTexte()">Se connecter</li>
-                    <li class="bouton" >Mon compte</li>
+                    <li class="bouton">Mon compte</li>
                 </ul>
             </div>
         </header>
@@ -41,15 +41,30 @@
             </div>
             <div class="div-topic">
                 {{range $index, $topic := .Topics}}
-                    <div class="topic">
-                        <div class="topic-title">{{$topic.Nom}} poster par {{$topic.Pseudonyme}} le {{$topic.Created_date}}</div>
+                    <div class="topic" onclick="showTopic({{$index}})">
+                        <div class="topic-title">{{$topic.Nom}} posté par {{$topic.Pseudonyme}} le {{$topic.Created_date}}</div>
                         <div class="topic-content">{{$topic.Contenu}}</div>
                         <div class="div-option">
-                            <button class="comments bouton">Commentaire</button>
+                            <button class="comments bouton">Commentaires</button>
                             <button class="report bouton">Signaler</button>
                         </div>
                     </div>
                 {{end}}
+            </div>
+            <div id="topic-details">
+                <div class="topic-selected">
+                    <div class="topic-content"></div>
+                    <div class="topic-first-message"></div>
+                    <div class="topic-pseudo-first-message"></div>
+                    <div class="div-add-comment">
+                        <textarea class="add-comment" placeholder="Ajouter un commentaire"></textarea>
+                        <button class="add">Commenter</button>
+                    </div>
+                    <div class = "div-comment">
+
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>

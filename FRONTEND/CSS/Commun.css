@@ -43,6 +43,12 @@ header {
     justify-content: flex-start;
 }
 
+.title a {
+    text-decoration: none;
+    color: #629AEE;
+    font-size: 30px;
+}
+
 .title img{
     display: flex;
     justify-content: flex-start;
