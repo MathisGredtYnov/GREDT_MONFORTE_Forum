@@ -73,11 +73,27 @@ function showTopic(topicIndex) {
     var divTopicElement = document.querySelector(".div-topic");
     var topicDetailsElement = document.getElementById("topic-details");
     var topicContentElements = document.querySelectorAll(".topic-content");
+    var topicTitleElements = document.querySelectorAll(".topic-title");
+    var topicPseudoElements = document.querySelectorAll(".topic-pseudo-first-message");
 
     divTopicElement.style.display = "none";
     topicDetailsElement.style.display = "flex";
+
     var topicContent = topicContentElements[topicIndex].innerText;
+    var topicTitle = topicTitleElements[topicIndex].innerText;
+    var topicPseudo = topicPseudoElements[topicIndex].innerText;
     
     var topicContentElement = topicDetailsElement.querySelector(".topic-content");
+    var topicFirstMessageElement = topicDetailsElement.querySelector(".topic-first-message");
+    var topicPseudoFirstMessageElement = topicDetailsElement.querySelector(".topic-pseudo-first-message");
+
     topicContentElement.innerText = topicContent;
+    topicFirstMessageElement.innerText = topicTitle;
+    topicPseudoFirstMessageElement.innerText = topicPseudo;
 }
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    var firstMessage = document.querySelector(".topic-content").textContent;
+    var topicFirstMessage = document.querySelector(".topic-first-message");
+    topicFirstMessage.textContent = firstMessage;
+});
