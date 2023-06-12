@@ -6,6 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="/FRONTEND/CSS/Commun.css">
+        <link rel="stylesheet" type="text/css" href="/FRONTEND/CSS/CommunMobile.css">
         <link rel="stylesheet" type="text/css" href="/FRONTEND/CSS/CGU.css">
         <title>Condition général d'utilisation</title>
     </head>
@@ -21,8 +22,8 @@
                 </div>
                 <div class="nav">
                     <ul>
-                        <li class="bouton" id="login" onclick="Connexion()">Se connecter</li>
-                        <li class="bouton">Mon compte</li>
+                        <li class="bouton" id="login" onclick="Deconnexion()">Se connecter</li>
+                        <a href="/Compte"><li class="bouton">Mon compte</li></a>
                     </ul>
                 </div>
                 <div class="popupconnexion">
@@ -36,7 +37,7 @@
                             <input type="password" class="password" placeholder="Mot de passe">
                         </div>
                         <div class = "log">
-                            <button id="BoutonConnexionPopup" class="login">Se connecter</button>
+                            <button id="BoutonConnexionPopup" class="login" onclick="Connexionpopup()">Se connecter</button>
                         </div>
                         <div class="conditions">
                             <p>En vous connectant, vous acceptez les <a href="/CGU">Conditions d'utilisation</a> et la <a href="/Private">Politique de confidentialité</a> de BlueDit.</p>
@@ -72,7 +73,6 @@
                 <div class = "categorieCP">
                     <ul>
                         <a href="/"><li class="bouton" > Accueil </li></a>
-                        <a href="/Compte"><li class="bouton" > Compte </li></a>
                         <a href="/CGU"><li class="bouton" > CGU </li></a>
                         <a href="/Private"><li class="bouton" > Politique de confidentialité </li></a>
                     </ul>
