@@ -8,10 +8,7 @@ const loginButton = document.getElementById('login');
 
 console.log(popupconnexion)
 
-loginButton.addEventListener('click', Connexion());
-
-function Connexion() {
-    console.log('test');
+loginButton.addEventListener('click', function() {
     const closeButton = popupconnexion.querySelector('.close-button');
     closeButton.addEventListener('click', function() {
         popupconnexion.style.display = 'none';
@@ -25,7 +22,7 @@ function Connexion() {
         popupconnexion.style.display = 'none';
         connexion = false;
     }
-}
+});
 
 
 //POPUP D'INSCRIPTION

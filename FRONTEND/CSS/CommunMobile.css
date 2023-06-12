@@ -16,9 +16,123 @@
 }
 
 body {
-    min-width: 100vw;
     background-color: #272727;
     font-family: 'inter';
     color: white;
     overflow-x: hidden;
+}
+
+.background {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+
+header {
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    background-color: #222222;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.title {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.title a {
+    text-decoration: none;
+    color: #629AEE;
+    font-size: 30px;
+}
+
+.title img{
+    display: flex;
+    justify-content: flex-start;
+    height: 75px;
+    width: 75px;
+    margin: 10px;
+}
+
+header h1 {
+    color: #629AEE;
+    padding-top: 30px;
+}
+
+.searchbar {
+    height: 100%;
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchbar input {
+    height: 50px;
+    width: 60%;
+    border-radius: 35px;
+    background-color: #629AEE;
+    border: none; 
+    padding-left: 20px;
+    color: #F5D8D8;
+    font-size: 20px;
+}
+
+/* .searchbar ::placeholder{
+    color: #F5D8D8;
+    font-size: 20px;
+} */
+
+.nav {
+    height: 100%;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav ul li {
+    color: white;
+    padding: 15px;
+    margin-right: 50px;
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 35px;
+    border: none;
+    background-color: #629AEE;
+}
+
+/* Fin header */
+
+
+/* Début animation bouton */
+
+.bouton {
+    cursor: pointer;
+    background-color: transparent;
+    color: black;
+    transition: 0.5s;
+}
+
+.bouton:hover {
+    background-color: #F5D8D8;
+    color: #629AEE;
+    font-family: 'inter';
+}
+
+/* Fin animation bouton */
+
+/* Debut popup */
+
+.popupconnexion, .popupinscription {
+    display: none;
 }
