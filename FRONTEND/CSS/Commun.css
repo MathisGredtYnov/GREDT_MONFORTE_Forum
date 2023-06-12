@@ -127,7 +127,7 @@ header h1 {
 
 /* Debut popup */
 
-.popup {
+.popupconnexion, .popupinscription {
     height: 600px;
     width: 500px;
     position: fixed;
@@ -184,7 +184,7 @@ header h1 {
     margin-top: 10px;
 }
 
-.email, .password{
+.email, .password, .username{
     height: 50px;
     width: 80%;
     border-radius: 35px;
