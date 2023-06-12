@@ -26,13 +26,31 @@ func Index(w http.ResponseWriter, r *http.Request) {
 		errorHandler(w, r, http.StatusNotFound)
 		return
 	}
+
+	type Cat struct {
+		ID     int
+		Nom    string
+		Topics []ForumPackage.Topic
+	}
+
 	data := struct {
-		Categories []string
+		Categories []Cat
 		Topics     []ForumPackage.Topic
 	}{
-		Categories: ForumPackage.AfficherCategories(),
+		Categories: make([]Cat, 0),
 		Topics:     ForumPackage.AfficherTopics(),
 	}
+
+	categoriesFromDB := ForumPackage.AfficherCategories()
+	for _, categorieDB := range categoriesFromDB {
+		cat := Cat{
+			ID:     categorieDB.ID,
+			Nom:    categorieDB.Nom,
+			Topics: ForumPackage.AfficherTopics(),
+		}
+		data.Categories = append(data.Categories, cat)
+	}
+
 	tmp := template.Must(template.ParseFiles("FRONTEND/template/index.html"))
 	tmp.Execute(w, data)
 }

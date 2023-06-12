@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/FRONTEND/CSS/Commun.css">
     <link rel="stylesheet" type="text/css" href="/FRONTEND/CSS/index.css">
+    <script src="/FRONTEND/JS/script.js"></script>
     <title>Accueil</title>
 </head>
 <body>
@@ -30,29 +31,35 @@
                 {{range .Categories}}
                     <div class="categorie">
                         <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                            {{.}} <img src="/FRONTEND/ASSETS/IMG/arrow.png" alt="arrow"></img>
+                            {{.Nom}} <img src="/FRONTEND/ASSETS/IMG/arrow.png" alt="arrow"></img>
                         </div>
                         <div class="dropdown-content">
-                            <p>COUCOU</p>
-                            <p>OUI</p>
+                            {{range .Topics}}
+                                <p>{{.Nom}}</p>
+                            {{end}}
                         </div>
                     </div>
                 {{end}}
             </div>
             <div class="div-topic">
-                {{range $index, $topic := .Topics}}
-                    <div class="topic" onclick="showTopic({{$index}})">
-                        <div class="topic-title">{{$topic.Nom}} posté par {{$topic.Pseudonyme}} le {{$topic.Created_date}}</div>
-                        <div class="topic-content">{{$topic.Contenu}}</div>
-                        <div class="div-option">
-                            <button class="comments bouton">Commentaires</button>
-                            <button class="report bouton">Signaler</button>
+                {{range .Categories}}
+                    {{range .Topics}}
+                        <div class="topic" onclick="showTopic()">
+                            <div class="topic-title"><p id="blue_arrow">&#10173;</p>{{.Nom}} posté par {{.Pseudonyme}} le {{.Created_date}}</div>
+                            <div class="topic-content"><p id="red_arrow">&#10173;</p>{{.Contenu}}</div>
+                            <div class="div-option">
+                                <button class="comments bouton">Commentaires</button>
+                                <button class="report bouton">Signaler</button>
+                            </div>
                         </div>
-                    </div>
+                    {{end}}
                 {{end}}
             </div>
             <div id="topic-details">
                 <div class="topic-selected">
+                    <div id="close-button">
+                        <button class="close-button" onclick="closeTopic()">Fermer</button>
+                    </div>
                     <div class="topic-first-message"></div>
                     <div class="topic-pseudo-first-message"></div>
                     <div class="topic-content"></div>
@@ -63,7 +70,6 @@
                     <div class="div-comment"></div>
                 </div>
             </div>
-            
         </div>
     </div>
     <script src="/FRONTEND/JS/script.js"></script>

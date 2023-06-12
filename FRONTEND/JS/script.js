@@ -86,11 +86,7 @@ function Inscription() {
     });
 }
 
-
 // Fin Inscription
-
-// Topic
-
 function toggleDropdown(element) {
     var dropdownContent = element.nextElementSibling;
     dropdownContent.classList.toggle('active');

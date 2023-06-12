@@ -14,26 +14,31 @@ type Topic struct {
 	Pseudonyme   string
 }
 
-func AfficherCategories() []string {
+type Categorie struct {
+	ID  int
+	Nom string
+}
+
+func AfficherCategories() []Categorie {
 	db, err := sql.Open("mysql", "root:@tcp(localhost:3306)/projet_forum")
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer db.Close()
 
-	rows, err := db.Query("SELECT nom FROM categorie")
+	rows, err := db.Query("SELECT ID_categorie, nom FROM categorie")
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer rows.Close()
 
-	var categories []string
+	var categories []Categorie
 	for rows.Next() {
-		var nomCategorie string
-		if err := rows.Scan(&nomCategorie); err != nil {
+		var categorie Categorie
+		if err := rows.Scan(&categorie.ID, &categorie.Nom); err != nil {
 			log.Fatal(err)
 		}
-		categories = append(categories, nomCategorie)
+		categories = append(categories, categorie)
 	}
 
 	if err := rows.Err(); err != nil {
