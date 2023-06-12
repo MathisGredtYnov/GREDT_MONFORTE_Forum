@@ -8,20 +8,24 @@ const loginButton = document.getElementById('login');
 
 console.log(popupconnexion)
 
-loginButton.addEventListener('click', function() {
+loginButton.addEventListener('click', Connexion());
+
+function Connexion() {
+    console.log('test');
     const closeButton = popupconnexion.querySelector('.close-button');
     closeButton.addEventListener('click', function() {
         popupconnexion.style.display = 'none';
+        connexion = false;
     });
 
     if ((connecter === false) & (connexion === false)) {
         popupconnexion.style.display = 'flex';
-        connecter = true;
+        connexion = true;
     } else {
         popupconnexion.style.display = 'none';
-        connecter = false;
+        connexion = false;
     }
-});
+}
 
 
 //POPUP D'INSCRIPTION
@@ -37,37 +41,45 @@ BoutonInscription.addEventListener('click', function() {
     const closeButton = popupinscription.querySelector('.close-button');
     closeButton.addEventListener('click', function() {
         popupinscription.style.display = 'none';
+        inscription = false;
+        connexion = false;
     });
 
-    if ((connecter === false) & (connexion === false) & (inscription === false)) {
+    if ((connecter === false) & (connexion === true) & (inscription === false)) {
         popupconnexion.style.display = 'none';
         popupinscription.style.display = 'flex';
+        connexion = false;
+        inscription = true;
     } else {
         popupinscription.style.display = 'none';
+        inscription = false;
     }
 });
 
 // Connexion
 
-function Connexion() {
+function Deconnexion() {
     var bouton = document.getElementById('login');
     
-    if (bouton.textContent === 'Se déconnecter') {
+    if (connecter === true) {
     
         bouton.textContent = 'Se connecter';
-        connexion = true;
+        connexion = false;
         connecter = false;
     }
+}
 
-    var connexionpopup = document.getElementById('BoutonConnexionPopup');
-    connexionpopup.addEventListener('click', function() {
-        if (bouton.textContent === 'Se connecter') {
-            popup.style.display = 'none';
-            bouton.textContent = 'Se déconnecter';
-            connexion = false;
-            connecter = true;
-        }
-    });
+function Connexionpopup() {
+    var popup = document.querySelector('.popupconnexion');
+    var popupbouton = document.querySelector('.BoutonConnexionPopup');
+    var bouton = document.getElementById('login');
+    
+    if (connexion === true) {
+        popup.style.display = 'none';
+        bouton.textContent = 'Se déconnecter';
+        connexion = false;
+        connecter = true;
+    }
 }
 
 // Fin Connexion
@@ -77,13 +89,15 @@ function Connexion() {
 const BoutonInscriptionpopup = document.querySelector('.BoutonInscriptionpopup');
 
 function Inscription() {
-    // var Inscriptionpopup = document.getElementById('BoutonInscriptionpopup');
-    BoutonInscriptionpopup.addEventListener('click', function() {
+    var popup = document.querySelector('.popupinscription');
+    var bouton = document.getElementById('login');
+    
+    if (inscription === true) {
         popup.style.display = 'none';
         bouton.textContent = 'Se déconnecter';
-        connexion = false;
+        inscription = false;
         connecter = true;
-    });
+    }
 }
 
 // Fin Inscription
