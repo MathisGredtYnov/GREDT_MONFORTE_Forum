@@ -21,19 +21,60 @@
                 </div>
                 <div class="nav">
                     <ul>
-                        <li class="bouton" id="login" onclick="changerTexte()">Se connecter</li>
+                        <li class="bouton" id="login" onclick="Connexion()">Se connecter</li>
                         <li class="bouton">Mon compte</li>
                     </ul>
+                </div>
+                <div class="popupconnexion">
+                    <div class="popup-header">
+                        <span class="close-button">&times;</span>
+                    </div>
+                    <div class="main-div">
+                        <h1 class="title_popup">Se connecter</h1>
+                        <div class="input-div">
+                            <input type="email" class="email" placeholder="E-mail">
+                            <input type="password" class="password" placeholder="Mot de passe">
+                        </div>
+                        <div class = "log">
+                            <button id="BoutonConnexionPopup" class="login">Se connecter</button>
+                        </div>
+                        <div class="conditions">
+                            <p>En vous connectant, vous acceptez les <a href="/CGU">Conditions d'utilisation</a> et la <a href="/Private">Politique de confidentialité</a> de BlueDit.</p>
+                        </div>
+                        <div class="inscription">
+                            <h1>Première fois sur BlueDit ?</h1>
+                            <p id="BoutonInscription">S'inscrire</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="popupinscription">
+                    <div class="popup-header">
+                        <span class="close-button">&times;</span>
+                    </div>
+                    <div class="main-div">
+                        <h1 class="title_popup">S'inscrire</h1>
+                        <div class="input-div">
+                            <input type="username" class="username" placeholder="pseudonyme">
+                            <input type="email" class="email" placeholder="E-mail">
+                            <input type="password" class="password" placeholder="Mot de passe">
+                        </div>
+                        <div class = "log">
+                            <button id="BoutonInscriptionpopup" class="login" onclick="Inscription()">S'inscrire</button>
+                        </div>
+                        <div class="conditions">
+                            <p>En vous connectant, vous acceptez les <a href="/CGU">Conditions d'utilisation</a> et la <a href="/Private">Politique de confidentialité</a> de BlueDit.</p>
+                        </div>
+                    </div>
                 </div>
             </header>
             </header>
             <div class = "WithOutHeader">
                 <div class = "categorieCP">
                     <ul>
-                        <li class="bouton" > Accueil </li>
-                        <li class="bouton" > Compte </li>
-                        <li class="bouton" > CGU </li>
-                        <li class="bouton" > Politique de confidentialité </li>
+                        <a href="/"><li class="bouton" > Accueil </li></a>
+                        <a href="/Compte"><li class="bouton" > Compte </li></a>
+                        <a href="/CGU"><li class="bouton" > CGU </li></a>
+                        <a href="/Private"><li class="bouton" > Politique de confidentialité </li></a>
                     </ul>
                 </div>
                 <div class="content">
