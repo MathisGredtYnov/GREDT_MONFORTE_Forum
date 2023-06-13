@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/FRONTEND/CSS/Commun.css">
     <link rel="stylesheet" type="text/css" href="/FRONTEND/CSS/index.css">
-    
+    <script src="/FRONTEND/JS/script.js"></script>
     <title>Accueil</title>
 </head>
 <body>
@@ -91,10 +91,14 @@
                             <button class="comments bouton">Commentaires</button>
                             <button class="report bouton">Signaler</button>
                         </div>
+                        <div class="topic-details" style="display: none;">
+                            <div class="topic-first-message">{{.Nom}}</div>
+                            <div class="topic-pseudo-first-message">{{.Pseudonyme}}</div>
+                            <div class="topic-content">{{.Contenu}}</div>
+                        </div>
                     </div>
                 {{end}}
             </div>
-            
             <div id="topic-details">
                 <div class="topic-selected">
                     <div id="close-button-topic">
@@ -110,8 +114,9 @@
                     <div class="div-comment"></div>
                 </div>
             </div>
-        </div>
+        </div>        
     </div>
     <script src="/FRONTEND/JS/script.js"></script>
+    <script src="/FRONTEND/JS/popup.js"></script>
 </body>
 </html>
