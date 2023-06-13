@@ -1,13 +1,21 @@
-//POPUP DE CONNEXION
+// Constructions et variables
+
+const popupconnexion = document.querySelector('.popupconnexion');
+const BoutonConnexion = document.getElementById('login');
+const BoutonInscription = document.getElementById('BoutonInscription');
+const popupinscription = document.querySelector('.popupinscription');
+const BoutonInscriptionpopup = document.querySelector('.BoutonInscriptionpopup');
+const closeButton = popupconnexion.querySelector('.close-button');
 
 var connexion = false;
 var connecter = false;
+var inscription = false;
 
-const popupconnexion = document.querySelector('.popupconnexion');
-const loginButton = document.getElementById('login');
+//POPUP DE CONNEXION
 
-loginButton.addEventListener('click', function() {
-    const closeButton = popupconnexion.querySelector('.close-button');
+BoutonConnexion.addEventListener('click', function() {
+    var ligneinscription = document.querySelector('.inscription');
+
     if (closeButton) {
         closeButton.addEventListener('click', function() {
             popupconnexion.style.display = 'none';
@@ -17,6 +25,7 @@ loginButton.addEventListener('click', function() {
 
     if ((connecter === false) & (connexion === false)) {
         popupconnexion.style.display = 'flex';
+        ligneinscription.style.display = 'flex';
         connexion = true;
         connecter = false;
     } else {
@@ -27,11 +36,6 @@ loginButton.addEventListener('click', function() {
 });
 
 //POPUP D'INSCRIPTION
-
-var inscription = false;
-
-const BoutonInscription = document.getElementById('BoutonInscription');
-const popupinscription = document.querySelector('.popupinscription');
 
 BoutonInscription.addEventListener('click', function() {
     const closeButton = popupinscription.querySelector('.close-button');
@@ -81,16 +85,18 @@ function Connexionpopup() {
 
 // Inscription
 
-const BoutonInscriptionpopup = document.querySelector('.BoutonInscriptionpopup');
-
 function Inscription() {
-    var popup = document.querySelector('.popupinscription');
-    var bouton = document.getElementById('login');
+    var popupinscription = document.querySelector('.popupinscription');
+    var popupconnexion = document.querySelector('.popupconnexion');
+    var ligneinscription = document.querySelector('.inscription');
     
     if (inscription === true) {
-        popup.style.display = 'none';
-        bouton.textContent = 'Se déconnecter';
+        popupinscription.style.display = 'none';
+        popupconnexion.style.display = 'flex';
+        ligneinscription.style.display = 'none';
         inscription = false;
-        connecter = true;
+        connexion = true;
     }
 }
+
+// Fin Inscription
