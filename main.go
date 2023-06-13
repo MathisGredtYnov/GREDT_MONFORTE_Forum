@@ -42,11 +42,14 @@ func Index(w http.ResponseWriter, r *http.Request) {
 	}
 
 	categoriesFromDB := ForumPackage.AfficherCategories()
+
 	for _, categorieDB := range categoriesFromDB {
+		topics := ForumPackage.AfficherTopicsForCategorie(categorieDB.ID)
+
 		cat := Cat{
 			ID:     categorieDB.ID,
 			Nom:    categorieDB.Nom,
-			Topics: ForumPackage.AfficherTopics(),
+			Topics: topics,
 		}
 		data.Categories = append(data.Categories, cat)
 	}
