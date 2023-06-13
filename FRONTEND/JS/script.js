@@ -131,3 +131,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
     var topicFirstMessage = document.querySelector(".topic-first-message");
     topicFirstMessage.textContent = firstMessage;
 });
+
+
+//fermer le topic selectionné
+function closeTopic() {
+    window.location.href = "/";
+}
