@@ -1,6 +1,7 @@
 //POPUP DE CONNEXION
 
 var connexion = false;
+var connecter = false;
 
 const popupconnexion = document.querySelector('.popupconnexion');
 const loginButton = document.getElementById('login');
@@ -14,18 +15,16 @@ loginButton.addEventListener('click', function() {
         });
     }
 
-    if (!connexion) {
+    if ((connecter === false) & (connexion === false)) {
         popupconnexion.style.display = 'flex';
         connexion = true;
+        connecter = false;
     } else {
         popupconnexion.style.display = 'none';
         connexion = false;
+        connecter = false;
     }
 });
-
-
-
-
 
 //POPUP D'INSCRIPTION
 
@@ -33,8 +32,6 @@ var inscription = false;
 
 const BoutonInscription = document.getElementById('BoutonInscription');
 const popupinscription = document.querySelector('.popupinscription');
-
-console.log(popupinscription)
 
 BoutonInscription.addEventListener('click', function() {
     const closeButton = popupinscription.querySelector('.close-button');
@@ -56,7 +53,6 @@ BoutonInscription.addEventListener('click', function() {
 });
 
 // Connexion
-
 function Deconnexion() {
     var bouton = document.getElementById('login');
     
@@ -128,14 +124,16 @@ function showTopic(topicIndex) {
     topicPseudoFirstMessageElement.innerText = topicPseudo;
 }
 
-window.addEventListener('DOMContentLoaded', (event) => {
-    var firstMessage = document.querySelector(".topic-content").textContent;
-    var topicFirstMessage = document.querySelector(".topic-first-message");
-    topicFirstMessage.textContent = firstMessage;
-});
+function hideTopicDetails() {
+    var divTopicElement = document.querySelector(".div-topic");
+    var topicDetailsElement = document.getElementById("topic-details");
+
+    divTopicElement.style.display = "block";
+    topicDetailsElement.style.display = "none";
+}
 
 
-//fermer le topic selectionné
+//fermer le topic selectionné 
 function closeTopic() {
     window.location.href = "/";
 }

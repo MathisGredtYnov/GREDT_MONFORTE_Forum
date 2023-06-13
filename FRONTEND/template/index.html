@@ -83,19 +83,18 @@
                 {{end}}
             </div>
             <div class="div-topic">
-                {{range .Categories}}
-                    {{range .Topics}}
-                        <div class="topic" onclick="showTopic()">
-                            <div class="topic-title"><p id="blue_arrow">&#10173;</p>{{.Nom}} posté par {{.Pseudonyme}} le {{.Created_date}}</div>
-                            <div class="topic-content"><p id="red_arrow">&#10173;</p>{{.Contenu}}</div>
-                            <div class="div-option">
-                                <button class="comments bouton">Commentaires</button>
-                                <button class="report bouton">Signaler</button>
-                            </div>
+                {{range $index, $topic := .Topics}}
+                    <div class="topic" onclick="showTopic({{$index}})">
+                        <div class="topic-title"><p id="blue_arrow">&#10173;</p>{{.Nom}} posté par {{.Pseudonyme}} le {{.Created_date}}</div>
+                        <div class="topic-content"><p id="red_arrow">&#10173;</p>{{.Contenu}}</div>
+                        <div class="div-option">
+                            <button class="comments bouton">Commentaires</button>
+                            <button class="report bouton">Signaler</button>
                         </div>
-                    {{end}}
+                    </div>
                 {{end}}
             </div>
+            
             <div id="topic-details">
                 <div class="topic-selected">
                     <div id="close-button-topic">
