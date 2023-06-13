@@ -73,13 +73,13 @@
     cursor: pointer;
 }
 
-#close-button {
+#close-button-topic {
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
 
-.close-button {
+.close-button-topic {
     padding: 5px 10px;
     border: none;
     border-radius: 4px;

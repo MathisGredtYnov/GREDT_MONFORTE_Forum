@@ -1,21 +1,20 @@
 //POPUP DE CONNEXION
 
 var connexion = false;
-var connecter = false;
 
 const popupconnexion = document.querySelector('.popupconnexion');
 const loginButton = document.getElementById('login');
 
-console.log(popupconnexion)
-
 loginButton.addEventListener('click', function() {
     const closeButton = popupconnexion.querySelector('.close-button');
-    closeButton.addEventListener('click', function() {
-        popupconnexion.style.display = 'none';
-        connexion = false;
-    });
+    if (closeButton) {
+        closeButton.addEventListener('click', function() {
+            popupconnexion.style.display = 'none';
+            connexion = false;
+        });
+    }
 
-    if ((connecter === false) & (connexion === false)) {
+    if (!connexion) {
         popupconnexion.style.display = 'flex';
         connexion = true;
     } else {
@@ -23,6 +22,9 @@ loginButton.addEventListener('click', function() {
         connexion = false;
     }
 });
+
+
+
 
 
 //POPUP D'INSCRIPTION
