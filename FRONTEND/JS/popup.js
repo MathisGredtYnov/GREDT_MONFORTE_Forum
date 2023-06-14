@@ -107,20 +107,14 @@ function Inscription() {
 
 // Debut menu
 
-let MenuLatéralOuvert = false;
+let MenuLateralOuvert = false;
 
 BoutonMenu.addEventListener('click', OuvertureMenu)
 
 function OuvertureMenu() {
+    console.log('OuvertureMenu');
 
-    Menu.classList.toggle('MenuLatéralOuvert');
-
-    // MenuLatéralOuvert = !MenuLatéralOuvert;
-    // if (MenuLatéralOuvert) {
-    //     Menu.classList.add('MenuLatéralOuvert');
-    // } else {
-    //     Menu.classList.remove('MenuLatéralOuvert');
-    // }
+    Menu.classList.toggle('MenuLateralOuvert');
 }
 
 // Fin menu

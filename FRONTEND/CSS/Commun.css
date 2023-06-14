@@ -62,6 +62,11 @@ header h1 {
     padding-top: 30px;
 }
 
+.BoutonRecherche{
+    cursor: pointer;
+    display: none;
+}
+
 .searchbar {
     height: 100%;
     width: 55%;
@@ -262,11 +267,12 @@ header h1 {
 
 /* Debut navbar verticale */
 
-/*partie catégorie*/
-
-.BoutonRecherche{
+.BoutonMenu {
+    cursor: pointer;
     display: none;
 }
+
+/*partie catégorie*/
 
 .div-categorie {
     position: fixed;
@@ -322,10 +328,6 @@ header h1 {
 }
 
 /*partie menu page*/
-
-.BoutonMenu {
-    display: none;
-}
 
 .categorieCP {
     position: relative;
@@ -403,6 +405,13 @@ header h1 {
         text-align: center;
     }
 
+    .background {
+        height: 100%;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
     /* Header */
 
     header {
@@ -445,7 +454,7 @@ header h1 {
         display: flex;
         position: fixed;
         top: 90px;
-        left: 275px;
+        left: 270px;
         height: 35px;
         width: 35px;
     }
@@ -493,118 +502,7 @@ header h1 {
 
     .popupconnexion,
     .popupinscription {
-        height: 250px;
-        width: 500px;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #222222;
-        padding: 20px;
-        border: none;
-        border-radius: 35px;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        z-index: 3;
-    }
-
-    .popup-header {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        font-size: 50px;
-    }
-
-    .main-div {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .title_popup {
-        text-align: center;
-        font-size: 40px;
-    }
-
-    .input-div {
-        height: 50%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .input-div label {
-        font-size: 20px;
-        margin-bottom: 10px;
-        margin-top: 10px;
-    }
-
-    .email,
-    .password,
-    .username {
-        height: 50px;
-        width: 80%;
-        border-radius: 35px;
-        background-color: #629AEE;
-        border: none;
-        margin-bottom: 20px;
-        color: #F5D8D8;
-        font-size: 20px;
-        padding-left: 20px;
-    }
-
-    .log {
-        height: 20%;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .login {
-        height: 50px;
-        width: 80%;
-        border-radius: 35px;
-        background-color: #629AEE;
-        border: none;
-        color: #F5D8D8;
-        font-size: 20px;
-        cursor: pointer;
-    }
-
-    .conditions {
-        height: 20%;
-        width: 100%;
-        display: flex;
-
-    }
-
-    .inscription {
-        height: 30%;
-        width: 100%;
-        display: inline-flex;
-        justify-content: flex-start;
-        align-items: flex-end;
-
-    }
-
-    .inscription h1 {
-        font-size: 20px;
-    }
-
-    .inscription p {
-        cursor: pointer;
-        font-size: 20px;
-        color: #629AEE;
-        padding-left: 10px;
-    }
-
-    .inscription p:hover {
-        text-decoration: underline;
+        height: 500px;
     }
 
     /* Fin popup */
@@ -612,9 +510,7 @@ header h1 {
     /* Debut WithoutHeader */
 
     .WithOutHeader {
-        height: 100%;
-        width: 100%;
-        display: flex;
+        flex-direction: column;
         justify-content: center;
         text-align: center;
         margin-top: 100px;
@@ -631,7 +527,7 @@ header h1 {
         width: 75px;
     }
 
-    .MenuLatéralOuvert {
+    .MenuLateralOuvert {
         left: 0px;
         transition: 0.5s;
     }
