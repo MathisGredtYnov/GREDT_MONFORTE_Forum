@@ -8,6 +8,8 @@ const BoutonInscriptionpopup = document.querySelector('.BoutonInscriptionpopup')
 const closeButton = popupconnexion.querySelector('.close-button');
 const BoutonMenu = document.querySelector('.BoutonMenu');
 const Menu = document.querySelector('.MenuLatéral');
+const BoutonRecherche = document.querySelector('.BoutonRecherche');
+const BarreRecherche = document.querySelector('.searchbar');
 
 var connexion = false;
 var connecter = false;
@@ -122,3 +124,15 @@ function OuvertureMenu() {
 }
 
 // Fin menu
+
+// Debut recherche
+
+let BarreRechercheOuvert = false;
+
+BoutonRecherche.addEventListener('click', OuvertureRecherche)
+
+function OuvertureRecherche() {
+    BarreRecherche.classList.toggle('BarreRechercheOuvert');
+}
+
+// Fin recherche

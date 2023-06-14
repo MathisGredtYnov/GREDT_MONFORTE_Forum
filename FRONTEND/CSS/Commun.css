@@ -441,6 +441,15 @@ header h1 {
         padding-top: 30px;
     }
 
+    .BoutonRecherche{
+        display: flex;
+        position: fixed;
+        top: 90px;
+        left: 275px;
+        height: 35px;
+        width: 35px;
+    }
+
     .searchbar {
         height: 100%;
         width: 425px;
@@ -448,9 +457,14 @@ header h1 {
         position: absolute;
         align-items: center;
         justify-content: center;
-        /* left: -300px; */
         left: 25px;
+        top: -150px;
+        transition: 0.5s;
+    }
+
+    .BarreRechercheOuvert {
         top: 150px;
+        transition: 0.5s;
     }
 
     .nav {
@@ -608,16 +622,21 @@ header h1 {
 
     /* Début sidenavbar  */
 
-    /*partie catégorie*/
-
-    .BoutonRecherche{
+    .BoutonMenu {
         display: flex;
         position: fixed;
-        top: 90px;
-        left: 275px;
-        height: 35px;
-        width: 35px;
+        top: 70px;
+        left: 10px;
+        height: 75px;
+        width: 75px;
     }
+
+    .MenuLatéralOuvert {
+        left: 0px;
+        transition: 0.5s;
+    }
+
+    /*partie catégorie*/
 
     .div-categorie {
         position: fixed;
@@ -634,14 +653,6 @@ header h1 {
 
     /*partie menu page*/
 
-    .BoutonMenu {
-        display: flex;
-        position: fixed;
-        top: 70px;
-        left: 10px;
-        height: 75px;
-        width: 75px;
-    }
 
     .categorieCP {
         position: fixed;
@@ -657,11 +668,6 @@ header h1 {
         top: 150px;
         left: -175px;
         z-index: 2;
-        transition: 0.5s;
-    }
-
-    .MenuLatéralOuvert {
-        left: 0px;
         transition: 0.5s;
     }
     
