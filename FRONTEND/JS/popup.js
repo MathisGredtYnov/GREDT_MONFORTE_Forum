@@ -105,19 +105,19 @@ function Inscription() {
 
 // Debut menu
 
-let isOpen = false;
+let MenuLatéralOuvert = false;
 
 BoutonMenu.addEventListener('click', OuvertureMenu)
 
 function OuvertureMenu() {
 
-    Menu.classList.toggle('isopen');
+    Menu.classList.toggle('MenuLatéralOuvert');
 
-    // isOpen = !isOpen;
-    // if (isOpen) {
-    //     Menu.classList.add('isopen');
+    // MenuLatéralOuvert = !MenuLatéralOuvert;
+    // if (MenuLatéralOuvert) {
+    //     Menu.classList.add('MenuLatéralOuvert');
     // } else {
-    //     Menu.classList.remove('isopen');
+    //     Menu.classList.remove('MenuLatéralOuvert');
     // }
 }
 
