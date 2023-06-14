@@ -721,25 +721,5 @@ header h1 {
         z-index: 1;
     }
 
-    .content h1 {
-        color: #FFFFFF;
-        margin: 25px;
-        font-size: 3em;
-    }
-
-    .content h2 {
-        color: #FFFFFF;
-        margin: 20px;
-        font-size: 2.25em;
-    }
-
-    .content p {
-        color: #FFFFFF;
-        padding: 15px;
-        font-size: 1.5em;
-    }
-
-    /* Fin contenu */
-
     /* Fin WithoutHeader */
 }
