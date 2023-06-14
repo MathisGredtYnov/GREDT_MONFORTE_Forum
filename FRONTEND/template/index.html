@@ -77,17 +77,17 @@
             <div class="div-categorie">
                 {{range .Categories}}
                 <div class="categorie">
-                    <div class="dropdown-toggle" onclick="toggleDropdown(this)">
-                        {{.Nom}} <img src="/FRONTEND/ASSETS/IMG/arrow.png" alt="arrow">
-                    </div>
-                    <div class="dropdown-content">
-                        {{range $index, $topic := .Topics}}
-                        <p onclick="showTopic('{{$topic.ID}}')">{{.Nom}}</p>
-                        {{end}}
-                    </div>
+                  <div class="dropdown-toggle" onclick="toggleDropdown(this)">
+                    {{.Nom}} <img src="/FRONTEND/ASSETS/IMG/arrow.png" alt="arrow">
+                  </div>
+                  <div class="dropdown-content">
+                    {{range $index, $topic := .Topics}}
+                    <p onclick="showTopicDetails(this)" data-nom="{{$topic.Nom}}" data-contenu="{{$topic.Contenu}}">{{$topic.Nom}}</p>
+                    {{end}}
+                  </div>
                 </div>
                 {{end}}
-            </div>
+              </div>
             <div class="div-topic">
                 {{range $index, $topic := .Topics}}
                 <div class="topic" onclick="showTopic('{{$topic.ID}}')" data-topic-id="{{$topic.ID}}">
