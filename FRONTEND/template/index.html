@@ -23,6 +23,8 @@
             </div>
             <div class="nav">
                 <ul>
+                    <img class="BoutonRecherche" src="/FRONTEND/ASSETS/IMG/loupe.png" alt="Barre de recherche">
+                    <img class="BoutonMenu" src="/FRONTEND/ASSETS/IMG/burger.png" alt="Menu">
                     <li class="bouton" id="login" onclick="Deconnexion()">Se connecter</li>
                     <a href="/Compte">
                         <li class="bouton">Mon compte</li>
@@ -74,7 +76,7 @@
             </div>
         </header>
         <div class="WithOutHeader">
-            <div class="div-categorie">
+            <div class="div-categorie MenuLatéral">
                 {{range .Categories}}
                 <div class="categorie">
                   <div class="dropdown-toggle" onclick="toggleDropdown(this)">

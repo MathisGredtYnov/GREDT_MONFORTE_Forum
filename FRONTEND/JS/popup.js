@@ -8,6 +8,8 @@ const BoutonInscriptionpopup = document.querySelector('.BoutonInscriptionpopup')
 const closeButton = popupconnexion.querySelector('.close-button');
 const BoutonMenu = document.querySelector('.BoutonMenu');
 const Menu = document.querySelector('.MenuLatéral');
+const BoutonRecherche = document.querySelector('.BoutonRecherche');
+const BarreRecherche = document.querySelector('.searchbar');
 
 var connexion = false;
 var connecter = false;
@@ -105,20 +107,26 @@ function Inscription() {
 
 // Debut menu
 
-let isOpen = false;
+let MenuLateralOuvert = false;
 
 BoutonMenu.addEventListener('click', OuvertureMenu)
 
 function OuvertureMenu() {
+    console.log('OuvertureMenu');
 
-    Menu.classList.toggle('isopen');
-
-    // isOpen = !isOpen;
-    // if (isOpen) {
-    //     Menu.classList.add('isopen');
-    // } else {
-    //     Menu.classList.remove('isopen');
-    // }
+    Menu.classList.toggle('MenuLateralOuvert');
 }
 
 // Fin menu
+
+// Debut recherche
+
+let BarreRechercheOuvert = false;
+
+BoutonRecherche.addEventListener('click', OuvertureRecherche)
+
+function OuvertureRecherche() {
+    BarreRecherche.classList.toggle('BarreRechercheOuvert');
+}
+
+// Fin recherche

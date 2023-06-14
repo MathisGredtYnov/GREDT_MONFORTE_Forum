@@ -62,6 +62,11 @@ header h1 {
     padding-top: 30px;
 }
 
+.BoutonRecherche{
+    cursor: pointer;
+    display: none;
+}
+
 .searchbar {
     height: 100%;
     width: 55%;
@@ -262,6 +267,11 @@ header h1 {
 
 /* Debut navbar verticale */
 
+.BoutonMenu {
+    cursor: pointer;
+    display: none;
+}
+
 /*partie catégorie*/
 
 .div-categorie {
@@ -318,10 +328,6 @@ header h1 {
 }
 
 /*partie menu page*/
-
-.BoutonMenu {
-    display: none;
-}
 
 .categorieCP {
     position: relative;
@@ -399,6 +405,13 @@ header h1 {
         text-align: center;
     }
 
+    .background {
+        height: 100%;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
     /* Header */
 
     header {
@@ -437,23 +450,30 @@ header h1 {
         padding-top: 30px;
     }
 
-    .searchbar {
-        height: 100%;
-        width: 55%;
+    .BoutonRecherche{
         display: flex;
-        align-items: center;
-        justify-content: center;
+        position: fixed;
+        top: 90px;
+        left: 270px;
+        height: 35px;
+        width: 35px;
     }
 
-    .searchbar input {
-        height: 50px;
-        width: 60%;
-        border-radius: 35px;
-        background-color: #629AEE;
-        border: none;
-        padding-left: 20px;
-        color: #F5D8D8;
-        font-size: 20px;
+    .searchbar {
+        height: 100%;
+        width: 425px;
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        left: 25px;
+        top: -150px;
+        transition: 0.5s;
+    }
+
+    .BarreRechercheOuvert {
+        top: 150px;
+        transition: 0.5s;
     }
 
     .nav {
@@ -482,124 +502,7 @@ header h1 {
 
     .popupconnexion,
     .popupinscription {
-        height: 250px;
-        width: 500px;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #222222;
-        padding: 20px;
-        border: none;
-        border-radius: 35px;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        z-index: 3;
-    }
-
-    .popup-header {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        font-size: 50px;
-    }
-
-    .close-button {
-        cursor: pointer;
-        border: none;
-        background-color: transparent;
-    }
-
-    .main-div {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .title_popup {
-        text-align: center;
-        font-size: 40px;
-    }
-
-    .input-div {
-        height: 50%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .input-div label {
-        font-size: 20px;
-        margin-bottom: 10px;
-        margin-top: 10px;
-    }
-
-    .email,
-    .password,
-    .username {
-        height: 50px;
-        width: 80%;
-        border-radius: 35px;
-        background-color: #629AEE;
-        border: none;
-        margin-bottom: 20px;
-        color: #F5D8D8;
-        font-size: 20px;
-        padding-left: 20px;
-    }
-
-    .log {
-        height: 20%;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .login {
-        height: 50px;
-        width: 80%;
-        border-radius: 35px;
-        background-color: #629AEE;
-        border: none;
-        color: #F5D8D8;
-        font-size: 20px;
-        cursor: pointer;
-    }
-
-    .conditions {
-        height: 20%;
-        width: 100%;
-        display: flex;
-
-    }
-
-    .inscription {
-        height: 30%;
-        width: 100%;
-        display: inline-flex;
-        justify-content: flex-start;
-        align-items: flex-end;
-
-    }
-
-    .inscription h1 {
-        font-size: 20px;
-    }
-
-    .inscription p {
-        cursor: pointer;
-        font-size: 20px;
-        color: #629AEE;
-        padding-left: 10px;
-    }
-
-    .inscription p:hover {
-        text-decoration: underline;
+        height: 500px;
     }
 
     /* Fin popup */
@@ -607,16 +510,15 @@ header h1 {
     /* Debut WithoutHeader */
 
     .WithOutHeader {
-        height: 100%;
-        width: 100%;
-        display: flex;
+        flex-direction: column;
         justify-content: center;
         text-align: center;
-        margin-top: 140px;
+        margin-top: 100px;
     }
 
     /* Début sidenavbar  */
 
+<<<<<<< HEAD
     /*partie catégorie*/
 
     .div-categorie {
@@ -680,6 +582,8 @@ header h1 {
 
     /*partie menu page*/
 
+=======
+>>>>>>> 994b120b0f8a4008fbecefbef8868ca5d3455dba
     .BoutonMenu {
         display: flex;
         position: fixed;
@@ -688,6 +592,29 @@ header h1 {
         height: 75px;
         width: 75px;
     }
+
+    .MenuLateralOuvert {
+        left: 0px;
+        transition: 0.5s;
+    }
+
+    /*partie catégorie*/
+
+    .div-categorie {
+        position: fixed;
+        border-top: 2px solid #272727;
+        height: 100vh;
+        width: 200px;
+        background-color: #222222;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        left : -200px;
+        z-index: 2;
+    }
+
+    /*partie menu page*/
+
 
     .categorieCP {
         position: fixed;
@@ -700,14 +627,9 @@ header h1 {
         justify-content: flex-start;
         align-items: center;
         text-align: center;
-        top: 152px;
+        top: 150px;
         left: -175px;
         z-index: 2;
-        transition: 0.5s;
-    }
-
-    .isopen {
-        left: 0px;
         transition: 0.5s;
     }
     
@@ -726,26 +648,6 @@ header h1 {
         width: 90%;
         z-index: 1;
     }
-
-    .content h1 {
-        color: #FFFFFF;
-        margin: 25px;
-        font-size: 3em;
-    }
-
-    .content h2 {
-        color: #FFFFFF;
-        margin: 20px;
-        font-size: 2.25em;
-    }
-
-    .content p {
-        color: #FFFFFF;
-        padding: 15px;
-        font-size: 1.5em;
-    }
-
-    /* Fin contenu */
 
     /* Fin WithoutHeader */
 }
