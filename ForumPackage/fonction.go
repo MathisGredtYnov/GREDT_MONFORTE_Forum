@@ -8,6 +8,7 @@ import (
 )
 
 type Topic struct {
+	ID           int
 	Nom          string
 	Contenu      string
 	Created_date string
@@ -55,7 +56,7 @@ func AfficherTopics() []Topic {
 	}
 	defer db.Close()
 
-	rows, err := db.Query("SELECT nom, contenu, created_date, pseudonyme FROM topic, message, utilisateur WHERE topic.ID_topic = message.ID_topic AND message.ID_user = utilisateur.ID_user GROUP BY topic.ID_topic ORDER BY topic.ID_topic ASC")
+	rows, err := db.Query("SELECT topic.ID_topic, topic.nom, message.contenu, message.created_date, utilisateur.pseudonyme FROM topic, message, utilisateur WHERE topic.ID_topic = message.ID_topic AND message.ID_user = utilisateur.ID_user GROUP BY topic.ID_topic ORDER BY topic.ID_topic ASC")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -64,7 +65,7 @@ func AfficherTopics() []Topic {
 	var topics []Topic
 	for rows.Next() {
 		var topic Topic
-		if err := rows.Scan(&topic.Nom, &topic.Contenu, &topic.Created_date, &topic.Pseudonyme); err != nil {
+		if err := rows.Scan(&topic.ID, &topic.Nom, &topic.Contenu, &topic.Created_date, &topic.Pseudonyme); err != nil {
 			log.Fatal(err)
 		}
 		topics = append(topics, topic)

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,8 +10,9 @@
     <script src="/FRONTEND/JS/script.js"></script>
     <title>Accueil</title>
 </head>
+
 <body>
-    <div class = "background">
+    <div class="background">
         <header>
             <div class="title">
                 <a href="/"><img src="/FRONTEND/ASSETS/IMG/Logo.png" alt="Logo" class="Logo"></a>
@@ -22,7 +24,9 @@
             <div class="nav">
                 <ul>
                     <li class="bouton" id="login" onclick="Deconnexion()">Se connecter</li>
-                    <a href="/Compte"><li class="bouton">Mon compte</li></a>
+                    <a href="/Compte">
+                        <li class="bouton">Mon compte</li>
+                    </a>
                 </ul>
             </div>
             <div class="popupconnexion">
@@ -35,11 +39,12 @@
                         <input type="email" class="email" placeholder="E-mail">
                         <input type="password" class="password" placeholder="Mot de passe">
                     </div>
-                    <div class = "log">
+                    <div class="log">
                         <button id="BoutonConnexionPopup" class="login" onclick="Connexionpopup()">Se connecter</button>
                     </div>
                     <div class="conditions">
-                        <p>En vous connectant, vous acceptez les <a href="/CGU">Conditions d'utilisation</a> et la <a href="/Private">Politique de confidentialité</a> de BlueDit.</p>
+                        <p>En vous connectant, vous acceptez les <a href="/CGU">Conditions d'utilisation</a> et la <a
+                                href="/Private">Politique de confidentialité</a> de BlueDit.</p>
                     </div>
                     <div class="inscription">
                         <h1>Première fois sur BlueDit ?</h1>
@@ -58,11 +63,12 @@
                         <input type="email" class="email" placeholder="E-mail">
                         <input type="password" class="password" placeholder="Mot de passe">
                     </div>
-                    <div class = "log">
+                    <div class="log">
                         <button id="BoutonInscriptionpopup" class="login" onclick="Inscription()">S'inscrire</button>
                     </div>
                     <div class="conditions">
-                        <p>En vous connectant, vous acceptez les <a href="/CGU">Conditions d'utilisation</a> et la <a href="/Private">Politique de confidentialité</a> de BlueDit.</p>
+                        <p>En vous connectant, vous acceptez les <a href="/CGU">Conditions d'utilisation</a> et la <a
+                                href="/Private">Politique de confidentialité</a> de BlueDit.</p>
                     </div>
                 </div>
             </div>
@@ -75,8 +81,8 @@
                         {{.Nom}} <img src="/FRONTEND/ASSETS/IMG/arrow.png" alt="arrow">
                     </div>
                     <div class="dropdown-content">
-                        {{range .Topics}}
-                        <p>{{.Nom}}</p>
+                        {{range $index, $topic := .Topics}}
+                        <p onclick="showTopic('{{$topic.ID}}')">{{.Nom}}</p>
                         {{end}}
                     </div>
                 </div>
@@ -84,7 +90,7 @@
             </div>
             <div class="div-topic">
                 {{range $index, $topic := .Topics}}
-                <div class="topic" onclick="showTopic({{$index}})">
+                <div class="topic" onclick="showTopic('{{$topic.ID}}')" data-topic-id="{{$topic.ID}}">
                     <div class="topic-title">
                         <p id="blue_arrow">&#10173;</p>
                         <span>{{$topic.Nom}} posté par {{$topic.Pseudonyme}} le {{$topic.Created_date}}</span>
@@ -105,7 +111,7 @@
                     <div id="close-button-topic">
                         <button class="close-button-topic" onclick="closeTopic()">Fermer</button>
                     </div>
-                    <div class="topic-first-message"></div>
+                    <div class="topic-title"></div>
                     <div class="topic-content"></div>
                     <div class="div-add-comment">
                         <textarea class="add-comment" placeholder="Ajouter un commentaire"></textarea>
@@ -114,9 +120,10 @@
                     <div class="div-comment"></div>
                 </div>
             </div>
-        </div>              
+        </div>
     </div>
     <script src="/FRONTEND/JS/script.js"></script>
     <script src="/FRONTEND/JS/popup.js"></script>
 </body>
+
 </html>

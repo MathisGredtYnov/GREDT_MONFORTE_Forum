@@ -3,26 +3,34 @@ function toggleDropdown(element) {
     dropdownContent.classList.toggle('active');
 }
 
-function showTopic(topicIndex) {
+function showTopic(topicId) {
     var divTopicElement = document.querySelector(".div-topic");
     var topicDetailsElement = document.getElementById("topic-details");
-    var topicContentElement = topicDetailsElement.querySelector(".topic-content span");
-    var topicTitleElement = topicDetailsElement.querySelector(".topic-title span");
+    var topicContentElement = topicDetailsElement.querySelector(".topic-content");
+    var topicTitleElement = topicDetailsElement.querySelector(".topic-title");
 
     divTopicElement.style.display = "none";
     topicDetailsElement.style.display = "flex";
 
     var topicElements = document.getElementsByClassName("topic");
-    var topic = topicElements[topicIndex];
+    var topicElement = null;
 
-    var topicContent = topic.querySelector(".topic-content span").innerHTML;
-    var topicTitle = topic.querySelector(".topic-title span").innerHTML;
+    for (var i = 0; i < topicElements.length; i++) {
+        var topicIdAttribute = topicElements[i].getAttribute("data-topic-id");
+        if (topicIdAttribute === topicId) {
+            topicElement = topicElements[i];
+            break;
+        }
+    }
 
-    var topicContentElementDetails = topicDetailsElement.querySelector(".topic-content");
-    var topicFirstMessageElement = topicDetailsElement.querySelector(".topic-first-message");
+    if (topicElement === null) {
+        return;
+    }
 
-    topicContentElementDetails.innerHTML = "<p id=\"red_arrow\">&#10173;</p><span>" + topicContent + "</span>";
-    topicFirstMessageElement.innerHTML = "<p id=\"blue_arrow\">&#10173;</p><span>" + topicTitle + "</span>";
+    var topicContent = topicElement.querySelector(".topic-content span").innerHTML;
+    var topicTitle = topicElement.querySelector(".topic-title span").innerHTML;
+    topicContentElement.innerHTML = "<p id=\"red_arrow\">&#10173;</p><span>" + topicContent + "</span>";
+    topicTitleElement.innerHTML = "<p id=\"blue_arrow\">&#10173;</p><span>" + topicTitle + "</span>";
 }
 
 //fermer le topic selectionné 
