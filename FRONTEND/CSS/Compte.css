@@ -1,3 +1,13 @@
+body{
+    background-color: #342929;
+}
+
+/*Bouton compte */
+
+.BoutonCompte{
+    display: none !important;
+}
+
 /* Debut WithOutHeader */
 
 .WithOutHeader .Left{
@@ -91,8 +101,63 @@
     color: white;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-align: center;
 }
 
 /* Fin information du compte */
 
 /* Fin WithOutHeader */
+
+@media screen and (max-width: 1024px) {
+
+    .BoutonConnexion{
+        position: absolute;
+        top: 20px;
+        right: -10px;
+    }
+
+    .Right{
+        display: none;
+    }
+
+    .Top{
+        display: block !important;
+        position: absolute;
+        top: 150px;
+        left: 40px;
+        height: 400px !important;
+        width: 350px !important;
+    }
+
+    .InfoAccountContent{
+        margin-top :0px;
+        height: 100%;
+        width: 100%;
+    }
+
+    .Left{
+        display: block !important;
+        position: absolute;
+        top: 600px;
+        left: 40px;
+        height: 600px !important;
+        width: 350px !important;
+    }
+
+    .TopicMenu{
+        height: 100px !important;
+        width: 100%;
+        margin: 0px !important;
+        border-bottom: 20px solid #342929;
+    }
+
+    .ListeTopic{
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .TopicContent{
+        width: 100%;
+        margin: 0px !important;
+    }
+}

@@ -22,6 +22,7 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
+    background-color: #342929;
 }
 
 /* Header */
@@ -412,6 +413,13 @@ header h1 {
         flex-direction: column;
     }
 
+    /* bouton */
+
+    .BoutonHeader{
+        padding: 10px !important;
+        width: 150px !important;
+    }
+
     /* Header */
 
     header {
@@ -518,72 +526,6 @@ header h1 {
 
     /* Début sidenavbar  */
 
-<<<<<<< HEAD
-    /*partie catégorie*/
-
-    .div-categorie {
-        position: fixed;
-        border-top: 2px solid #272727;
-        height: 100vh;
-        width: 15%;
-        background-color: #222222;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-
-    }
-
-    .categorie {
-        font-size: 20px;
-        padding: 10px;
-        padding-top: 20px;
-        height: auto;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .categorie img {
-        height: 45px;
-        width: 45px;
-    }
-
-    .dropdown-toggle {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        cursor: pointer;
-    }
-
-
-    .dropdown-content {
-        display: none;
-
-    }
-
-    .dropdown-content.active {
-        font-size: 13px;
-        height: auto;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-
-    }
-
-    .dropdown-content.active p {
-        cursor: pointer;
-        padding: 10px;
-        width: 100%;
-    }
-
-    /*partie menu page*/
-
-=======
->>>>>>> 994b120b0f8a4008fbecefbef8868ca5d3455dba
     .BoutonMenu {
         display: flex;
         position: fixed;
@@ -594,9 +536,9 @@ header h1 {
     }
 
     .MenuLateralOuvert {
-        left: 0px;
+        left: 0px !important;
         transition: 0.5s;
-    }
+    }      
 
     /*partie catégorie*/
 
@@ -609,7 +551,7 @@ header h1 {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        left : -200px;
+        left : 0px;
         z-index: 2;
     }
 
@@ -628,7 +570,7 @@ header h1 {
         align-items: center;
         text-align: center;
         top: 150px;
-        left: -175px;
+        left: 0px;
         z-index: 2;
         transition: 0.5s;
     }

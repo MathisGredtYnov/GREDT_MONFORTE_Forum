@@ -6,8 +6,6 @@ const BoutonInscription = document.getElementById('BoutonInscription');
 const popupinscription = document.querySelector('.popupinscription');
 const BoutonInscriptionpopup = document.querySelector('.BoutonInscriptionpopup');
 const closeButton = popupconnexion.querySelector('.close-button');
-const BoutonMenu = document.querySelector('.BoutonMenu');
-const Menu = document.querySelector('.MenuLatéral');
 const BoutonRecherche = document.querySelector('.BoutonRecherche');
 const BarreRecherche = document.querySelector('.searchbar');
 
@@ -107,12 +105,17 @@ function Inscription() {
 
 // Debut menu
 
-let MenuLateralOuvert = false;
+const BoutonMenu = document.querySelector('.BoutonMenu');
+const Menu = document.querySelector('.MenuLateral');
+
+let MenuLatéralOuvert = false;
 
 BoutonMenu.addEventListener('click', OuvertureMenu)
 
 function OuvertureMenu() {
-    console.log('OuvertureMenu');
+
+    console.log('click');
+    console.log(Menu);
 
     Menu.classList.toggle('MenuLateralOuvert');
 }
