@@ -38,11 +38,13 @@
                 <div class="main-div">
                     <h1 class="title_popup">Se connecter</h1>
                     <div class="input-div">
-                        <input type="email" class="email" placeholder="E-mail">
-                        <input type="password" class="password" placeholder="Mot de passe">
-                    </div>
-                    <div class="log">
-                        <button id="BoutonConnexionPopup" class="login" onclick="Connexionpopup()">Se connecter</button>
+                        <form method="POST">
+                            <input type="email" class="email" name="loginEmail" placeholder="E-mail">
+                            <input type="password" class="password" name="loginPassword" placeholder="Mot de passe">
+                            <div class="log">
+                                <button id="BoutonConnexionPopup" class="login" onclick="Connexionpopup()">Se connecter</button>
+                            </div>
+                        </form>
                     </div>
                     <div class="conditions">
                         <p>En vous connectant, vous acceptez les <a href="/CGU">Conditions d'utilisation</a> et la <a
@@ -61,16 +63,19 @@
                 <div class="main-div">
                     <h1 class="title_popup">S'inscrire</h1>
                     <div class="input-div">
-                        <input type="username" class="username" placeholder="pseudonyme">
-                        <input type="email" class="email" placeholder="E-mail">
-                        <input type="password" class="password" placeholder="Mot de passe">
-                    </div>
-                    <div class="log">
-                        <button id="BoutonInscriptionpopup" class="login" onclick="Inscription()">S'inscrire</button>
+                        <form method="POST">
+                            <input type="username" name="username" class="username" placeholder="pseudonyme">
+                            <input type="email" name="email" class="email" placeholder="E-mail">
+                            <input type="password" name="password" class="password" placeholder="Mot de passe">
+                            <div class="log">
+                                <button id="BoutonInscriptionpopup" class="login" onclick="Inscription()">S'inscrire</button>
+                            </div>
+                        </form>
                     </div>
                     <div class="conditions">
                         <p>En vous connectant, vous acceptez les <a href="/CGU">Conditions d'utilisation</a> et la <a
-                                href="/Private">Politique de confidentialité</a> de BlueDit.</p>
+                            href="/Private">Politique de confidentialité</a> de BlueDit.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -84,12 +89,12 @@
                   </div>
                   <div class="dropdown-content">
                     {{range $index, $topic := .Topics}}
-                    <p onclick="showTopicDetails(this)" data-nom="{{$topic.Nom}}" data-contenu="{{$topic.Contenu}}">{{$topic.Nom}}</p>
+                        <p onclick="showTopicDetails(this)" data-nom="{{$topic.Nom}}" data-contenu="{{$topic.Contenu}}">{{$topic.Nom}}</p>
                     {{end}}
                   </div>
                 </div>
                 {{end}}
-              </div>
+            </div>
             <div class="div-topic">
                 {{range $index, $topic := .Topics}}
                 <div class="topic" onclick="showTopic('{{$topic.ID}}')" data-topic-id="{{$topic.ID}}">

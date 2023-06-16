@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"forum/ForumPackage"
 	"html/template"
+	"log"
 	"net/http"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -27,33 +28,70 @@ func Index(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	type Cat struct {
-		ID     int
-		Nom    string
-		Topics []ForumPackage.Topic
+	if r.Method == "POST" {
+		handleRegistration(w, r)
+		return
 	}
 
+	data := buildIndexData()
+	renderIndexTemplate(w, data)
+}
+
+func handleRegistration(w http.ResponseWriter, r *http.Request) {
+	username := r.FormValue("username")
+	email := r.FormValue("email")
+	password := r.FormValue("password")
+
+	err := ForumPackage.InsertUserData(username, email, password)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if ForumPackage.AuthenticateUser(email, password) {
+		// L'authentification réussit, redirigez vers la page d'accueil ou une autre page appropriée
+		http.Redirect(w, r, "/", http.StatusSeeOther)
+		return
+	}
+
+	// L'authentification a échoué, affichez un message d'erreur approprié
+	fmt.Fprintf(w, "Identifiants invalides")
+}
+
+func buildIndexData() interface{} {
 	data := struct {
-		Categories []Cat
-		Topics     []ForumPackage.Topic
+		Categories []struct {
+			ID     int
+			Nom    string
+			Topics []ForumPackage.Topic
+		}
+		Topics []ForumPackage.Topic
 	}{
-		Categories: make([]Cat, 0),
-		Topics:     ForumPackage.AfficherTopics(),
+		Categories: make([]struct {
+			ID     int
+			Nom    string
+			Topics []ForumPackage.Topic
+		}, 0),
+		Topics: ForumPackage.AfficherTopics(),
 	}
 
 	categoriesFromDB := ForumPackage.AfficherCategories()
 
 	for _, categorieDB := range categoriesFromDB {
-		topics := ForumPackage.AfficherTopicsForCategorie(categorieDB.ID)
-
-		cat := Cat{
+		cat := struct {
+			ID     int
+			Nom    string
+			Topics []ForumPackage.Topic
+		}{
 			ID:     categorieDB.ID,
 			Nom:    categorieDB.Nom,
-			Topics: topics,
+			Topics: ForumPackage.AfficherTopicsForCategorie(categorieDB.ID),
 		}
 		data.Categories = append(data.Categories, cat)
 	}
+	return data
+}
 
+func renderIndexTemplate(w http.ResponseWriter, data interface{}) {
 	tmp := template.Must(template.ParseFiles("FRONTEND/template/index.html"))
 	tmp.Execute(w, data)
 }
